@@ -99,6 +99,7 @@ GameObject:
   m_Component:
   - component: {fileID: 712722538998302319}
   - component: {fileID: 7550671234755609389}
+  - component: {fileID: 1667262712922596845}
   m_Layer: 0
   m_Name: ActionHolder
   m_TagString: Untagged
@@ -136,8 +137,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   battleUnit: {fileID: 3783470650741117017}
   basicAttack: {fileID: 4105738691927729548}
+  unitAbilities: {fileID: 0}
   currentAbilites:
   - {fileID: 1596061885034832446}
+--- !u!114 &1667262712922596845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 573383065575316450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdeddfaea406ceb4794000beab7294aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ability: {fileID: 11400000, guid: 9b1061f47348283478a361038edf4169, type: 2}
+  battleActions: {fileID: 0}
+  level: 1
 --- !u!1 &648864366158596434
 GameObject:
   m_ObjectHideFlags: 0
@@ -545,6 +562,8 @@ MonoBehaviour:
   battleConditions: {fileID: 2143978432039776255}
   waitingForInput: 0
   actionMode: 0
+  unitInfo: {fileID: 0}
+  unitConditions: {fileID: 0}
   actionUsed: 0
   moveUsed: 0
   isDead: 0

@@ -20,6 +20,9 @@ public class BattleUnit : MonoBehaviour
     public bool waitingForInput = false;
     public ActionMode actionMode = ActionMode.Idle;
 
+    public UnitInfoSO unitInfo;
+    public UnitConditionsSO unitConditions;
+
     public bool actionUsed = false;
     public bool moveUsed = false;
 
@@ -85,6 +88,7 @@ public class BattleUnit : MonoBehaviour
     public void DamageUnit(int damage)
     {
         unitStats.currentHP -= damage;
+        unitInfo.currentHP -= damage;
         battleManager.uiManager.SpawnDamageCounter(this, damage);
 
         if(unitStats.currentHP < 1)

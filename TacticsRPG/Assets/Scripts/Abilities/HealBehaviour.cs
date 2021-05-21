@@ -6,11 +6,11 @@ public class HealBehaviour : AbilityBehavior
 {
     public int ammount;
     public GridCell[] targets;
-    public TargetBehaviour behaviourType;
+    public TargetBehaviour targetType;
 
     public override void Execute(GridCell targetCell)
     {
-        targets = behaviourType.GetTargets(targetCell);
+        targets = targetType.GetTargets(targetCell);
 
         foreach (GridCell target in targets)
         {

@@ -12,12 +12,18 @@ public class BattleManager : MonoBehaviour
     public List<BattleUnit> enemyUnits;
     public List<BattleUnit> spawnedUnits = new List<BattleUnit>();
 
+
     public void SpawnPlayers(List<GridCell> spawnCells)
     {
         foreach (BattleUnit player in playerUnits)
         {
             BattleUnit unit = Instantiate<BattleUnit>(player);
             GridCell cell = spawnCells[Random.Range(0, spawnCells.Count)];
+            UnitInfoSO _unitInfo = new UnitInfoSO();
+            unit.unitInfo = _unitInfo;
+            UnitConditionsSO _unitConditions = new UnitConditionsSO();
+            unit.unitConditions = _unitConditions;
+            unit.gameObject.AddComponent<UnitAbilities>();
             spawnCells.Remove(cell);
             unit.SetUnitStart(cell);
             unit.battleManager = this;

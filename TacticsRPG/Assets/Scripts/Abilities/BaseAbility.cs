@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
 [System.Flags]
 public enum TargetType
 {
@@ -9,10 +10,13 @@ public enum TargetType
     Ally = 2,
     Enemy = 4
 }
+*/
 
 public class BaseAbility : AbilityBehavior
 {
+    public Ability ability; // TODO: Make list
     public BattleActions battleActions;
+
     [Range(1,3)]
     public int level = 1;
 
@@ -23,8 +27,18 @@ public class BaseAbility : AbilityBehavior
 
     public List<AbilityBehavior> abilityBehaviors;
 
+    public void Init()  
+    {
+        requiresTarget = ability.requiresTarget;
+        onlyTargetDamaged = ability.onlyTargetDamaged;
+        targetType = ability.targetType;
+        range = ability.range;
+    }
+
     public void ShowRange()
     {
+        Init();
+
         if (requiresTarget)
         {
             List<GridCell> cellsInRange = AStar.FindAttackRange(battleActions.battleUnit.currentCell, range);

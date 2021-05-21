@@ -6,5 +6,6 @@ public class BattleActions : MonoBehaviour
 {
     public BattleUnit battleUnit;
     public BasicAttack basicAttack;
+    public UnitAbilities unitAbilities;
     public BaseAbility[] currentAbilites;
 }

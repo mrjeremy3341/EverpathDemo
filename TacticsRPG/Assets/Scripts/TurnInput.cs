@@ -46,8 +46,16 @@ public class TurnInput : MonoBehaviour, ITurn
                 }
                 else if (battleUnit.actionMode == BattleUnit.ActionMode.Ability)
                 {
+                    if (!battleUnit.battleActions.unitAbilities.ability.AbilityAuthorized(targetCell))
+                    {
+                        Debug.Log("You cannot complete this action");
+                        //UI prompt;
+                        //Character Dialogue bark;
+                        //Sound Effect;
+                    }
+
                     battleUnit.actionMode = BattleUnit.ActionMode.Idle;
-                    battleUnit.battleActions.currentAbilites[0].Execute(targetCell);
+                    battleUnit.battleActions.unitAbilities.ability.Execute(targetCell);
                     battleUnit.unitStats.currentAP = 0;
                     battleUnit.actionUsed = true;
                 }

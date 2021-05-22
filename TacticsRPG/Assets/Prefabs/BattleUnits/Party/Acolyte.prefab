@@ -705,6 +705,7 @@ GameObject:
   - component: {fileID: 3783470650741117017}
   - component: {fileID: 5147727892343323441}
   - component: {fileID: -1508238139436951068}
+  - component: {fileID: -7795085461244582793}
   m_Layer: 0
   m_Name: Acolyte
   m_TagString: Untagged
@@ -795,6 +796,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   battleUnit: {fileID: 0}
   turnActive: 0
+--- !u!114 &-7795085461244582793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6168497832988204143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdeddfaea406ceb4794000beab7294aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectedAbility: {fileID: 11400000, guid: 9b1061f47348283478a361038edf4169, type: 2}
+  battleActions: {fileID: 0}
+  unitAbilities: []
+  actionsHolder: {fileID: 6705125535609280292}
+  level: 1
+  targettingController: {fileID: 0}
+  targetCell: {fileID: 0}
 --- !u!1 &6705125535609280292
 GameObject:
   m_ObjectHideFlags: 0
@@ -805,7 +825,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4757061439903544915}
   - component: {fileID: 6501076724861775545}
-  - component: {fileID: 8769325696388844503}
   m_Layer: 0
   m_Name: ActionHolder
   m_TagString: Untagged
@@ -843,24 +862,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   battleUnit: {fileID: 3783470650741117017}
   basicAttack: {fileID: 6419193828591769752}
-  unitAbilities: {fileID: 0}
+  unitAbilities: {fileID: -7795085461244582793}
   currentAbilites:
   - {fileID: 9154939094934417563}
---- !u!114 &8769325696388844503
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6705125535609280292}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fdeddfaea406ceb4794000beab7294aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ability: {fileID: 11400000, guid: 9b1061f47348283478a361038edf4169, type: 2}
-  battleActions: {fileID: 0}
-  level: 1
 --- !u!1 &8363132320359427759
 GameObject:
   m_ObjectHideFlags: 0

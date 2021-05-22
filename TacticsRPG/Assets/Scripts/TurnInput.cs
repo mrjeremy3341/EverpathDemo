@@ -46,7 +46,7 @@ public class TurnInput : MonoBehaviour, ITurn
                 }
                 else if (battleUnit.actionMode == BattleUnit.ActionMode.Ability)
                 {
-                    if (!battleUnit.battleActions.unitAbilities.ability.AbilityAuthorized(targetCell))
+                    if (!battleUnit.battleActions.unitAbilities.selectedAbility.AbilityAuthorized(targetCell))
                     {
                         Debug.Log("You cannot complete this action");
                         //UI prompt;
@@ -55,7 +55,7 @@ public class TurnInput : MonoBehaviour, ITurn
                     }
 
                     battleUnit.actionMode = BattleUnit.ActionMode.Idle;
-                    battleUnit.battleActions.unitAbilities.ability.Execute(targetCell);
+                    battleUnit.battleActions.unitAbilities.UseAbility(targetCell);
                     battleUnit.unitStats.currentAP = 0;
                     battleUnit.actionUsed = true;
                 }

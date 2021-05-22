@@ -4,18 +4,12 @@ using UnityEngine;
 
 public class HealBehaviour : AbilityBehavior
 {
-    public int ammount;
+    public int amount;
     public GridCell[] targets;
-    public TargetBehaviour targetType;
 
     public override void Execute(GridCell targetCell)
     {
-        targets = targetType.GetTargets(targetCell);
-
-        foreach (GridCell target in targets)
-        {
-            BattleUnit unit = GetComponentInParent<BaseAbility>().battleActions.battleUnit;
-            target.currentUnit.DamageUnit(-BattleCalculations.HealCalculation(unit, ammount));
-        }
+        BattleUnit unit = GetComponentInParent<BaseAbility>().battleActions.battleUnit;
+        targetCell.currentUnit.DamageUnit(-BattleCalculations.HealCalculation(unit, amount));
     }
 }

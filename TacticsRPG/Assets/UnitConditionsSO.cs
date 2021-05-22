@@ -3,8 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-[System.Flags]
-public enum Conditions { Stunned = 0, Slowed = 1, Sleep = 2, Invisible = 3, Taunted = 4, Silenced = 5 }
+public enum Conditions 
+{ 
+    None,
+    Stunned, 
+    Slowed, 
+    Sleep, 
+    Invisible, 
+    Taunted, 
+    Silenced 
+}
 
 [CreateAssetMenu(fileName = "Unit Conditions")]
 public class UnitConditionsSO : ScriptableObject
@@ -44,6 +52,7 @@ public class UnitConditionsSO : ScriptableObject
                 {
                     stunned = true;
                     RefreshConditions?.Invoke(this, EventArgs.Empty); // Listened to by BattleUnit - BattleUnit doesn't necessarily have to do anything after listening. This is in case some execution has to take place after;
+                    Debug.Log("Stun Applied");
                     //calculate resistances (if mechanic exists)
                     //stunnedTurns = ability.duration; // (- ability.duration * resistances percentage, then round up or down)
 

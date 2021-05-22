@@ -31,8 +31,8 @@ public class BaseAbility : AbilityBehavior
     {
         requiresTarget = ability.requiresTarget;
         onlyTargetDamaged = ability.onlyTargetDamaged;
-        targetType = ability.targetType;
-        range = ability.range;
+        targetType = ability.baseTargetType;
+        range = ability.targettingRange;
     }
 
     public void ShowRange()
@@ -84,17 +84,18 @@ public class BaseAbility : AbilityBehavior
         else
         {
             battleActions.battleUnit.actionMode = BattleUnit.ActionMode.Idle;
-            battleActions.battleUnit.actionUsed = true;
+            battleActions.battleUnit.actionUsed = true;  
             Execute(battleActions.battleUnit.currentCell);
         }
     }
 
     public override void Execute(GridCell targetCell)
-    {
+    {        
         battleActions.battleUnit.battleManager.gridManager.ClearCells();
         foreach(AbilityBehavior behavior in abilityBehaviors)
         {
             behavior.Execute(targetCell);
         }
+        
     }
 }

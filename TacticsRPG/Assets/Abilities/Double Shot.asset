@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 059350e0aa211da45bb19200392f5f1d, type: 3}
+  m_Name: Double Shot
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  abilityName: Double Shot
+  apCost: 3
+  stackable: 0
+  level: 1
+  requiresTarget: 1
+  onlyTargetDamaged: 1
+  baseTargetType: 4
+  multipleTargetBehaviours: 0
+  targettingRange: 0
+  blockingConditions: 
+  abilityBehaviors:
+  - {fileID: 6484421418533114175, guid: 1cd14cd9d2341084b9618eb8b5a24c0a, type: 3}
+  - {fileID: 6484421418533114175, guid: 1cd14cd9d2341084b9618eb8b5a24c0a, type: 3}
+  targetBehaviours: 0000000000000000
+  conditions: 0000000000000000
+  isSpecializedAbility: 0
+  hasAdditionalModifiers: 0
+  rangeModifier: 
+  damageModifier: 
+  healModifier: 
+  battleUnit: {fileID: 0}
+  healAmount: 0
+  pulses: 0
+  rawDamage: 0
+  isMagic: 0
+  appliesConditions: 0
+  stunDelay: 0
+  stunnedDuration: 0
+  slowDelay: 0
+  slowDuration: 0
+  sleepDelay: 0
+  sleepDuration: 0
+  invisibleDelay: 0
+  invisDuration: 0
+  tauntDelay: 0
+  tauntedDuration: 0
+  silenceDelay: 0
+  silencedDuration: 0

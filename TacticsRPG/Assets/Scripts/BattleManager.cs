@@ -12,6 +12,7 @@ public class BattleManager : MonoBehaviour
     public List<BattleUnit> enemyUnits;
     public List<BattleUnit> spawnedUnits = new List<BattleUnit>();
 
+    public GameObject targettingControllerPrefab;
 
     public void SpawnPlayers(List<GridCell> spawnCells)
     {
@@ -19,11 +20,15 @@ public class BattleManager : MonoBehaviour
         {
             BattleUnit unit = Instantiate<BattleUnit>(player);
             GridCell cell = spawnCells[Random.Range(0, spawnCells.Count)];
-            UnitInfoSO _unitInfo = new UnitInfoSO();
+            //////////
+            UnitInfoSO _unitInfo = ScriptableObject.CreateInstance<UnitInfoSO>();
             unit.unitInfo = _unitInfo;
-            UnitConditionsSO _unitConditions = new UnitConditionsSO();
+            UnitConditionsSO _unitConditions = ScriptableObject.CreateInstance<UnitConditionsSO>();
             unit.unitConditions = _unitConditions;
-            unit.gameObject.AddComponent<UnitAbilities>();
+            var unitAbilities = unit.gameObject.GetComponent<UnitAbilities>();
+            var targettingController = Instantiate(targettingControllerPrefab, unit.transform);
+            unitAbilities.targettingController = targettingController;
+            //////////
             spawnCells.Remove(cell);
             unit.SetUnitStart(cell);
             unit.battleManager = this;
@@ -39,6 +44,10 @@ public class BattleManager : MonoBehaviour
         {
             BattleUnit unit = Instantiate<BattleUnit>(enemy);
             GridCell cell = spawnCells[Random.Range(0, spawnCells.Count)];
+            UnitInfoSO _unitInfo = ScriptableObject.CreateInstance<UnitInfoSO>();
+            unit.unitInfo = _unitInfo;
+            UnitConditionsSO _unitConditions = ScriptableObject.CreateInstance<UnitConditionsSO>();
+            unit.unitConditions = _unitConditions;
             spawnCells.Remove(cell);
             unit.SetUnitStart(cell);
             unit.battleManager = this;

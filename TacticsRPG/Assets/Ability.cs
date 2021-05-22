@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using Sirenix.OdinInspector;
 
-[System.Flags]
 public enum TargetType
 {
     Ground = 1,
@@ -15,105 +15,127 @@ public enum TargetBehaviors
 {
     SingleTarget,
     SelfTarget,
-    AoE,
+    areaOfEffect,
     GridCell
 }
 
 [CreateAssetMenu(menuName = "Abilities/New Ability")]
-public class Ability : ScriptableObject
+public class Ability : SerializedScriptableObject
 {
     public string abilityName;
-    public bool isSpecializedAbility;
+
     public float apCost;
     public bool stackable;
 
-    [EnumFlagsAttribute]
-    public Conditions blockingConditions;
-
-    public List<AbilityBehavior> abilityBehaviors;
-
-    [Header("Base Ability")]
+    [FoldoutGroup("Base Parameters")]
     [Range(1, 3)]
     public int level = 1;
+    [FoldoutGroup("Base Parameters")]
     public bool requiresTarget;
+    [FoldoutGroup("Base Parameters")]
     public bool onlyTargetDamaged = false;
-    public TargetType targetType;
-    public TargetBehaviors targetBehaviour;
+    [FoldoutGroup("Base Parameters")]
+    public TargetType baseTargetType;
+    [FoldoutGroup("Base Parameters")]
     public bool multipleTargetBehaviours;
-    public int range;
+    [FoldoutGroup("Base Parameters")]
+    public int targettingRange;
 
-    [Header("Heal Behaviour")]
-    public bool hasHealBehaviour;
-    public float healAmount;
-    public int pulses;
+    public List<Conditions> blockingConditions;
 
-    [Header("Damage")]
-    public bool hasDamageBehavior;
-    public float rawDamage;
-    public bool isMagic;
+    [FoldoutGroup("Ability Effects")]
+    [HorizontalGroup("Ability Effects/Lists")]
+    [AssetSelector(Paths = "/Prefabs/Behaviour Prefabs")]
+    public List<AbilityBehavior> abilityBehaviors;
+    [HorizontalGroup("Ability Effects/Lists")]
+    public List<TargetBehaviors> targetBehaviours;
+    [HorizontalGroup("Ability Effects/Lists")]
+    public List<Conditions> conditions;
+    [DetailedInfoBox("Every ability behaviour must have a corresponding target behaviour and every ApplyConditions needs a corresponding behavior, target type and condition", 
+        "Executions are run abilityBehaviour[i] and targetBehaviour[i])] therefore both Lists must be the same size. " +
+        "The Conditions list does not need to be the same size as the other two however it runs with every ApplyCondition behavior in the behaviours list")]
+    public bool isSpecializedAbility;
 
-    [Header("Conditions Applied")]
-    public bool stun;        
-    public int stunnedDuration;
-    public bool slow;
-    public int slowDuration;
-    public bool sleep;
-    public int sleepDuration;
-    public bool invisible;
-    public int invisDuration;
-    public bool taunt;
-    public int tauntedDuration;
-    public bool silence;
-    public int silencedDuration;
-    
-    protected BattleUnit battleUnit;
+    [InfoBox("If consecutive abilities have modified values, include them here")]
+    public bool hasAdditionalModifiers;
+    [ShowIfGroup("hasAdditionalModifiers")]
+    [FoldoutGroup("hasAdditionalModifiers/Modifiers")]
+    [HorizontalGroup("hasAdditionalModifiers/Modifiers/Lists")]
+    public List<int> rangeModifier;
+    [HorizontalGroup("hasAdditionalModifiers/Modifiers/Lists")]
+    public List<int> damageModifier;
+    [HorizontalGroup("hasAdditionalModifiers/Modifiers/Lists")]
+    public List<int> healModifier;
+
+    [ReadOnly]
+    public BattleUnit battleUnit;
     protected BattleActions battleActions;
 
-    public List<int> SelectedBlockingConditions()
-    {
-        List<int> selected = new List<int>();
-        for (int i = 0; i < Enum.GetValues(typeof(Conditions)).Length; i++)
-        {
-            int layer = 1 << i;
-            if (((int)blockingConditions & layer) != 0)
-            {
-                selected.Add(i);
-            }            
-        }
+    [FoldoutGroup("Heal")]
+    public int healAmount;
+    [FoldoutGroup("Heal")]
+    public int pulses;
 
-        return selected;
-    }
+    [FoldoutGroup("Damage")]
+    public int rawDamage;
+    [FoldoutGroup("Damage")]
+    public bool isMagic;
+
+    public bool appliesConditions;
+    [ShowIfGroup("appliesConditions")]
+    [FoldoutGroup("appliesConditions/Conditions Applied")]
+    [HorizontalGroup("appliesConditions/Conditions Applied/Stun")]
+    public int stunDelay;
+    [HorizontalGroup("appliesConditions/Conditions Applied/Stun")]
+    public int stunnedDuration;
+    [HorizontalGroup("appliesConditions/Conditions Applied/Slow")]
+    public int slowDelay;
+    [HorizontalGroup("appliesConditions/Conditions Applied/Slow")]
+    public int slowDuration;
+    [HorizontalGroup("appliesConditions/Conditions Applied/Sleep")]
+    public int sleepDelay;
+    [HorizontalGroup("appliesConditions/Conditions Applied/Sleep")]
+    public int sleepDuration;
+    [HorizontalGroup("appliesConditions/Conditions Applied/Invisiblity")]
+    public int invisibleDelay;
+    [HorizontalGroup("appliesConditions/Conditions Applied/Invisiblity")]
+    public int invisDuration;
+    [HorizontalGroup("appliesConditions/Conditions Applied/Taunt")]
+    public int tauntDelay;
+    [HorizontalGroup("appliesConditions/Conditions Applied/Taunt")]
+    public int tauntedDuration;
+    [HorizontalGroup("appliesConditions/Conditions Applied/Silence")]
+    public int silenceDelay;
+    [HorizontalGroup("appliesConditions/Conditions Applied/Silence")]
+    public int silencedDuration;
+    
 
     public virtual bool AbilityAuthorized(GridCell targetCell)
     {
-        if (battleUnit.unitInfo.currentAP < apCost) { return false; }
-        if (battleUnit.unitInfo.actionUsed) { return false; }
-        for (int i = 0; i < SelectedBlockingConditions().Count; i++)
+        //if (battleUnit.unitStats.currentAP < apCost) { Debug.Log("Not enough AP");  return false; }
+        //if (battleUnit.unitStats.actionUsed) { Debug.Log("Action already used"); return false; }
+        if (blockingConditions.Count != 0)
         {
-            if (SelectedBlockingConditions()[i] == 0 && battleUnit.unitConditions.stunned ) { return false; }
-            if (SelectedBlockingConditions()[i] == 1 && battleUnit.unitConditions.slowed) { return false; }
-            if (SelectedBlockingConditions()[i] == 2 && battleUnit.unitConditions.sleep) { return false; }
-            if (SelectedBlockingConditions()[i] == 3 && battleUnit.unitConditions.invisible) { return false; }
-            if (SelectedBlockingConditions()[i] == 4 && battleUnit.unitConditions.taunted) { return false; }
-            if (SelectedBlockingConditions()[i] == 5 && battleUnit.unitConditions.silenced) { return false; }
+            for (int i = 0; i < blockingConditions.Count; i++)
+            {
+                Debug.Log("Checking Condition Blocks");
+                if (blockingConditions[i] == Conditions.Stunned && battleUnit.unitConditions.stunned) { return false; }
+                if (blockingConditions[i] == Conditions.Slowed && battleUnit.unitConditions.slowed) { return false; }
+                if (blockingConditions[i] == Conditions.Sleep && battleUnit.unitConditions.sleep) { return false; }
+                if (blockingConditions[i] == Conditions.Invisible && battleUnit.unitConditions.invisible) { return false; }
+                if (blockingConditions[i] == Conditions.Taunted && battleUnit.unitConditions.taunted) { return false; }
+                if (blockingConditions[i] == Conditions.Silenced && battleUnit.unitConditions.silenced) { return false; }
+            }
         }
 
         return true;
     }
 
-    public virtual void Execute(GridCell targetCell)
+    public virtual void Execute(GridCell targetCell, GameObject thisObj)
     {
-
-    }
-
-
-    public void Foo()
-    {
-        for (int i = 0; i < SelectedBlockingConditions().Count; i++)
+        foreach (var behaviour in abilityBehaviors)
         {
-            Debug.Log(SelectedBlockingConditions()[i].ToString());
-            Debug.Log(SelectedBlockingConditions()[i]);
+            //behaviour.Execute(targetCell);
         }
     }
-
 }

@@ -4,19 +4,14 @@ using UnityEngine;
 
 public class DamageBehaviour : AbilityBehavior
 {
-    public int ammount;
+    public int amount;
     public bool isMagic;
     public GridCell[] targets;
-    public TargetBehaviour behaviourType;
 
     public override void Execute(GridCell targetCell)
     {
-        targets = behaviourType.GetTargets(targetCell);
-
-        foreach(GridCell target in targets)
-        {
-            BattleUnit unit = GetComponentInParent<BaseAbility>().battleActions.battleUnit;
-            target.currentUnit.DamageUnit(BattleCalculations.DamageCalculation(unit, target.currentUnit, ammount, isMagic));
-        }
+        BattleUnit unit = GetComponentInParent<BattleUnit>();
+        Debug.Log(targetCell.currentUnit.name);
+        targetCell.currentUnit.DamageUnit(BattleCalculations.DamageCalculation(unit, targetCell.currentUnit, amount, isMagic));
     }
 }

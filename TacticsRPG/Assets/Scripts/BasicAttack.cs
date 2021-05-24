@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class BasicAttack : MonoBehaviour
 {
+    /// <summary>
+    /// TO BE RETIRED
+    /// </summary>
+    /*
     public BattleActions battleActions;
 
     public int attackRange;
     public bool isMagic;
 
+    
     public void ShowRange()
     {
         List<GridCell> cellsInRange = AStar.FindAttackRange(battleActions.battleUnit.currentCell, attackRange);
@@ -29,7 +34,11 @@ public class BasicAttack : MonoBehaviour
     public void DamageTarget(BattleUnit target)
     {
         int damage = BattleCalculations.BasicAttackDamage(battleActions.battleUnit, target, isMagic);
-        target.DamageUnit(damage);
+        target.TakeDamage(damage);
         battleActions.battleUnit.battleManager.gridManager.ClearCells();
     }
+    */
+    /// <summary>
+    /// TO BE RETIRED
+    /// </summary>
 }

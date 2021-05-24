@@ -3,22 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
 
-public enum AbilityEffects
-{
-    None,
-    HealEffect,
-    DamageEffect,
-    MoveEffect,
-    PushEffect,
-    DamageOverTimeEffect,
-    ApplyCondition,
-    SpawnPrefab
-}
-
 public abstract class AbilityBehavior : MonoBehaviour
 {
-    [ValidateInput("SendWarning", "Ensure AbilityBehavior object has a serialized Behaviour enum")]
     public AbilityEffects effect;
+    public BattleUnit currentUnit;
+
     public bool SendWarning()
     {
         if (effect == AbilityEffects.None)
@@ -28,5 +17,6 @@ public abstract class AbilityBehavior : MonoBehaviour
         return true;
     }
 
-    public abstract void Execute(GridCell targetCell);
+    public abstract void Execute(GridCell targetCell, BattleUnit unit);
+
 }

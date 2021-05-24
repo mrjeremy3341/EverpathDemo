@@ -96,7 +96,7 @@ public class UIManager : MonoBehaviour
         currentTurn.waitingForInput = true;
         currentTurn.actionMode = BattleUnit.ActionMode.Attack;
 
-        currentTurn.battleActions.basicAttack.ShowRange();
+        currentTurn.ShowBasicAttackRange();
     }
 
     public void ShowAbilityRange()

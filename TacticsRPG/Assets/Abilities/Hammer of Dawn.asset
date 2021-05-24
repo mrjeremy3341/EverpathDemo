@@ -24,30 +24,31 @@ MonoBehaviour:
   abilityName: 
   apCost: 0
   stackable: 0
-  blockingConditions: 
-  abilityBehaviors:
-  - {fileID: 6484421418533114175, guid: 1cd14cd9d2341084b9618eb8b5a24c0a, type: 3}
-  targetBehaviours: 00000000
-  conditions: 01000000
-  isSpecializedAbility: 0
-  hasAdditionalModifiers: 1
-  rangeModifier: 
-  damageModifier: 
-  healModifier: 
-  battleUnit: {fileID: 0}
   level: 1
   requiresTarget: 1
   onlyTargetDamaged: 0
   baseTargetType: 1
   multipleTargetBehaviours: 0
   targettingRange: 0
+  blockingConditions: 
+  abilityBehaviors:
+  - {fileID: 6484421418533114175, guid: 1cd14cd9d2341084b9618eb8b5a24c0a, type: 3}
+  - {fileID: 5807821126282362285, guid: 279ef1e0673f4204397b77f7e45d56fd, type: 3}
+  targetBehaviours: 0000000000000000
+  conditions: 0000000001000000
+  isSpecializedAbility: 0
+  hasAdditionalModifiers: 1
+  rangeModifier: 
+  damageModifier: 
+  healModifier: 
+  battleUnit: {fileID: 0}
   healAmount: 0
   pulses: 0
   rawDamage: 0
   isMagic: 0
   appliesConditions: 1
   stunDelay: 0
-  stunnedDuration: 0
+  stunnedDuration: 3
   slowDelay: 0
   slowDuration: 0
   sleepDelay: 0
@@ -58,3 +59,5 @@ MonoBehaviour:
   tauntedDuration: 0
   silenceDelay: 0
   silencedDuration: 0
+  damageOverTime: 0
+  dOTDuration: 0

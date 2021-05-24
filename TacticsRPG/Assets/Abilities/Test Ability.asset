@@ -31,16 +31,11 @@ MonoBehaviour:
   multipleTargetBehaviours: 0
   targettingRange: 8
   blockingConditions: 
-  abilityBehaviors:
-  - {fileID: 6484421418533114175, guid: 1cd14cd9d2341084b9618eb8b5a24c0a, type: 3}
-  - {fileID: 5807821126282362285, guid: 279ef1e0673f4204397b77f7e45d56fd, type: 3}
-  targetBehaviours: 000000000000000001000000
-  conditions: 010000000000000004000000
-  isSpecializedAbility: 0
-  hasAdditionalModifiers: 0
-  rangeModifier: 
-  damageModifier: 
-  healModifier: 
+  abilityEffects: 02000000
+  targetBehaviours: 00000000
+  conditions: 01000000
+  hasStackingAbilities: 0
+  stackingAbilities: []
   battleUnit: {fileID: 0}
   healAmount: 0
   pulses: 0
@@ -48,7 +43,7 @@ MonoBehaviour:
   isMagic: 0
   appliesConditions: 1
   stunDelay: 0
-  stunnedDuration: 0
+  stunnedDuration: 2
   slowDelay: 0
   slowDuration: 0
   sleepDelay: 0
@@ -59,3 +54,8 @@ MonoBehaviour:
   tauntedDuration: 0
   silenceDelay: 0
   silencedDuration: 0
+  damageOverTime: 0
+  dOTDuration: 0
+  animationParameter: 
+  preparationParticleEffect: {fileID: 0}
+  executeParticleEffect: {fileID: 0}

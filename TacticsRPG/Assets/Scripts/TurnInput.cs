@@ -40,7 +40,7 @@ public class TurnInput : MonoBehaviour, ITurn
                     if(targetCell.currentUnit != null)
                     {
                         battleUnit.actionMode = BattleUnit.ActionMode.Idle;
-                        battleUnit.battleActions.basicAttack.DamageTarget(targetCell.currentUnit);
+                        battleUnit.BasicAttack(targetCell.currentUnit);
                         battleUnit.actionUsed = true;
                     }
                 }
@@ -55,7 +55,7 @@ public class TurnInput : MonoBehaviour, ITurn
                     }
 
                     battleUnit.actionMode = BattleUnit.ActionMode.Idle;
-                    battleUnit.battleActions.unitAbilities.UseAbility(targetCell);
+                    battleUnit.battleActions.unitAbilities.InitializeAbility(targetCell);
                     battleUnit.unitStats.currentAP = 0;
                     battleUnit.actionUsed = true;
                 }

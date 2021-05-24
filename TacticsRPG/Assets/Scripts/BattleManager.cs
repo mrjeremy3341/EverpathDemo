@@ -12,7 +12,9 @@ public class BattleManager : MonoBehaviour
     public List<BattleUnit> enemyUnits;
     public List<BattleUnit> spawnedUnits = new List<BattleUnit>();
 
-    public GameObject targettingControllerPrefab;
+    public GameObject baseEnemyPrefab;
+    public GameObject targettingController;
+    public GameObject abilityManager;
 
     public void SpawnPlayers(List<GridCell> spawnCells)
     {
@@ -21,12 +23,10 @@ public class BattleManager : MonoBehaviour
             BattleUnit unit = Instantiate<BattleUnit>(player);
             GridCell cell = spawnCells[Random.Range(0, spawnCells.Count)];
             //////////
-            UnitInfoSO _unitInfo = ScriptableObject.CreateInstance<UnitInfoSO>();
-            unit.unitInfo = _unitInfo;
             UnitConditionsSO _unitConditions = ScriptableObject.CreateInstance<UnitConditionsSO>();
             unit.unitConditions = _unitConditions;
             var unitAbilities = unit.gameObject.GetComponent<UnitAbilities>();
-            var targettingController = Instantiate(targettingControllerPrefab, unit.transform);
+            unitAbilities.abilityManager = abilityManager;            
             unitAbilities.targettingController = targettingController;
             //////////
             spawnCells.Remove(cell);
@@ -39,12 +39,12 @@ public class BattleManager : MonoBehaviour
     }
 
     public void SpawnEnemies(List<GridCell> spawnCells)
-    {
+    {        
         foreach(BattleUnit enemy in enemyUnits)
         {
             BattleUnit unit = Instantiate<BattleUnit>(enemy);
             GridCell cell = spawnCells[Random.Range(0, spawnCells.Count)];
-            UnitInfoSO _unitInfo = ScriptableObject.CreateInstance<UnitInfoSO>();
+            UnitStatsSO _unitInfo = ScriptableObject.CreateInstance<UnitStatsSO>();
             unit.unitInfo = _unitInfo;
             UnitConditionsSO _unitConditions = ScriptableObject.CreateInstance<UnitConditionsSO>();
             unit.unitConditions = _unitConditions;
@@ -55,6 +55,38 @@ public class BattleManager : MonoBehaviour
             BattleCalculations.SetInitiative(unit);
             spawnedUnits.Add(unit);
         }
+        
+        /*
+        foreach (EnemyTemplate enemyTemplate in enemyUnits)
+        {
+            BattleUnit unit;
+
+            if (enemyTemplate.isCompletePrefab)
+            {
+                unit = Instantiate(enemyTemplate.enemyPrefab).GetComponent<BattleUnit>();
+            }
+            else
+            {
+                unit = Instantiate(baseEnemyPrefab).GetComponent<BattleUnit>();
+                UnitCreator.BuildUnit(unit, enemyTemplate);
+            }      
+            
+            UnitConditionsSO _unitConditions = ScriptableObject.CreateInstance<UnitConditionsSO>();
+            unit.unitConditions = _unitConditions;            
+            GridCell cell = spawnCells[Random.Range(0, spawnCells.Count)];
+            spawnCells.Remove(cell);
+            unit.SetUnitStart(cell);
+            unit.battleManager = this;
+            unit.isAlly = false;
+            BattleCalculations.SetInitiative(unit);
+            spawnedUnits.Add(unit);
+        }
+        */
+    }
+
+    private void AssignStats(BattleUnit enemy, EnemyTemplate template)
+    {
+
     }
 
     public void InitTurns()

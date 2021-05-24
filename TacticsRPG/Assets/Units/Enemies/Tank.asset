@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c663d798a3c8194db2f10e7d4908dd2, type: 3}
+  m_Name: Tank
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  unitName: Tank
+  unitSprite: {fileID: -9110243453299497147, guid: 97dba7fd266961d45b11a2dcdfc9cfe4, type: 3}
+  unitClass: 1
+  scalingParameters: {fileID: 11400000, guid: 5f0995f06316e1e4aa3e3f3bad24a246, type: 2}
+  usesCustomScaling: 0
+  customScalingParameters: {fileID: 0}
+  classAbilities: {fileID: 11400000, guid: 861c83490636f35429bd5f3a89bae0f4, type: 2}
+  usesCustomAbilities: 0
+  customClassAbilities: {fileID: 0}
+  baseHP: 250
+  baseAP: 0
+  baseMP: 0
+  baseAttack: 0
+  baseArmor: 0
+  baseProtection: 0
+  baseAgility: 0
+  baseInitiative: 0
+  baseImmunities: 

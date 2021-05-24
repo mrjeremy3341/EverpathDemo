@@ -6,25 +6,19 @@ public class ApplyCondition : AbilityBehavior
 {
     public Ability ability;
     public int duration;
+    public int damageTick;
     public bool isInstant;
     public Conditions condition;
     public GridCell[] targets;
     public TargetBehaviour behaviourType;
 
-    public override void Execute(GridCell targetCell)
+    public override void Execute(GridCell targetCell, BattleUnit unit)
     {
-        targetCell.currentUnit.unitConditions.AttemptConditionApply(ability, condition);
+        // Basically null - this script is a just a placeholder for when an ability simply sets a condition. The condition is set in UseAbility
 
         /*
-        BaseCondition newCondition = Instantiate<BaseCondition>(condition);
-        newCondition.transform.SetParent(targetCell.currentUnit.battleConditions.transform);
-        targetCell.currentUnit.battleConditions.conditions.Add(newCondition);
-        newCondition.duration = duration;
-        newCondition.battleConditions = targetCell.currentUnit.battleConditions;
-        if (isInstant)
-        {
-            newCondition.Effect();
-        }
+        Debug.Log("Condition Execute");
+        targetCell.currentUnit.unitConditions.AttemptConditionApply(ability, condition);
         */
     }
 }

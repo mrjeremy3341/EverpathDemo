@@ -25,9 +25,12 @@ public class BattleManager : MonoBehaviour
             //////////
             UnitConditionsSO _unitConditions = ScriptableObject.CreateInstance<UnitConditionsSO>();
             unit.unitConditions = _unitConditions;
-            var unitAbilities = unit.gameObject.GetComponent<UnitAbilities>();
+            UnitAbilities unitAbilities = unit.gameObject.GetComponent<UnitAbilities>();
             unitAbilities.abilityManager = abilityManager;            
             unitAbilities.targettingController = targettingController;
+            UnitInventory unitInventory = unit.gameObject.AddComponent<UnitInventory>();
+            unitInventory.inventoryUI = uiManager.GetComponent<InventoryUI>();
+            unit.unitInventory = unitInventory;
             //////////
             spawnCells.Remove(cell);
             unit.SetUnitStart(cell);
@@ -44,10 +47,10 @@ public class BattleManager : MonoBehaviour
         {
             BattleUnit unit = Instantiate<BattleUnit>(enemy);
             GridCell cell = spawnCells[Random.Range(0, spawnCells.Count)];
-            UnitStatsSO _unitInfo = ScriptableObject.CreateInstance<UnitStatsSO>();
-            unit.unitInfo = _unitInfo;
             UnitConditionsSO _unitConditions = ScriptableObject.CreateInstance<UnitConditionsSO>();
             unit.unitConditions = _unitConditions;
+            UnitInventory unitInventory = unit.gameObject.AddComponent<UnitInventory>();
+            unitInventory.inventoryUI = uiManager.GetComponent<InventoryUI>();
             spawnCells.Remove(cell);
             unit.SetUnitStart(cell);
             unit.battleManager = this;

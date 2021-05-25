@@ -76,7 +76,6 @@ public class UnitConditionsSO : ScriptableObject
             case Conditions.Slowed:
 
 
-
                 break;
             case Conditions.Sleep:
                 break;

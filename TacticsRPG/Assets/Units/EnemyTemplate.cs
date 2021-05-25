@@ -19,12 +19,11 @@ public class EnemyTemplate : ScriptableObject
 {
     public string enemyName;
     [PreviewField(55, ObjectFieldAlignment.Left)]
-
+    public Sprite enemySprite;
     public bool isCompletePrefab;
     [ShowIf("isCompletePrefab")]
     public GameObject enemyPrefab;
-
-    public Sprite enemySprite;
+    
     public EnemyClass enemyClass;
     public int enemyLevel;
 

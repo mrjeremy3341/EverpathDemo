@@ -46,9 +46,7 @@ public class TurnAI : MonoBehaviour, ITurn
         {
             desiredAction = CloseDistance();
         }
-
-        
-        Debug.Log(desiredAction.targetCell + ", " + desiredAction.targetUnit);
+               
         if (battleUnit.battleConditions.CheckCondition(Conditions.Stunned) || battleUnit.battleConditions.CheckCondition(Conditions.Sleep))
         {
             possibleActions.Clear();

@@ -17,6 +17,8 @@ public class EverpathElementsCreator : OdinMenuEditorWindow
     private static CreateNewAbility newAbility;
     private static CreateNewUnit newUnit;
     private static CreateNewEnemy newEnemy;
+    private static CreateNewItem newItem;
+
 
     protected override OdinMenuTree BuildMenuTree()
     {
@@ -24,10 +26,13 @@ public class EverpathElementsCreator : OdinMenuEditorWindow
         newAbility = new CreateNewAbility();
         newUnit = new CreateNewUnit();
         newEnemy = new CreateNewEnemy();
+        newItem = new CreateNewItem();
         tree.Add("Create New Ability", newAbility);
         tree.Add("Create New Party Unit", newUnit);
         tree.Add("Create New Enemy", newEnemy);
-        tree.AddAllAssetsAtPath("Ability Editor", "Assets/Abilities", typeof(Ability));
+        tree.Add("Create New Item", newItem);
+        tree.AddAllAssetsAtPath("Ability Editor", "Assets/Abilities", typeof(Ability), true);
+        tree.AddAllAssetsAtPath("", "Assets/Inventory", typeof(InventoryItem), true);
         tree.AddAllAssetsAtPath("", "Assets/Units", typeof(UnitTemplate), true);
         tree.AddAllAssetsAtPath("", "Assets/Units", typeof(EnemyTemplate), true);
         return tree;
@@ -93,6 +98,26 @@ public class EverpathElementsCreator : OdinMenuEditorWindow
             AssetDatabase.CreateAsset(enemy, "Assets/Units/Party Units" + newEnemy.enemy.name + ".asset");
             AssetDatabase.SaveAssets();
             enemy = ScriptableObject.CreateInstance<EnemyTemplate>();
+        }
+    }
+
+    public class CreateNewItem
+    {
+        [InlineEditor(ObjectFieldMode = InlineEditorObjectFieldModes.Hidden)]
+        public InventoryItem item;
+
+        public CreateNewItem()
+        {
+            item = ScriptableObject.CreateInstance<InventoryItem>();
+            item.name = "New Item";
+        }
+
+        [Button("Create New Item Object")]
+        private void CreateNewItemObject()
+        {
+            AssetDatabase.CreateAsset(item, "Assets/Inventory/Items" + newItem.item.name + ".asset");
+            AssetDatabase.SaveAssets();
+            item = ScriptableObject.CreateInstance<InventoryItem>();
         }
     }
 

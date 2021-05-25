@@ -22,6 +22,7 @@ public class BattleUnit : MonoBehaviour
 
     public UnitStatsSO unitInfo;
     public UnitConditionsSO unitConditions;
+    public UnitInventory unitInventory;
 
     public bool actionUsed = false;
     public bool moveUsed = false;

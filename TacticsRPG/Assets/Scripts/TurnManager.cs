@@ -10,7 +10,7 @@ public class TurnManager : MonoBehaviour
 
     private void Start()
     {
-        
+
     }
 
     public void NextTurn()
@@ -31,7 +31,7 @@ public class TurnManager : MonoBehaviour
         }
 
         currentTurn = turnOrder.Dequeue();
-        
+
         if (!currentTurn.isDead)
         {
             currentTurn.battleTurn.TakeTurn();
@@ -40,7 +40,14 @@ public class TurnManager : MonoBehaviour
         {
             NextTurn();
         }
-        
+
+        OnNewTurnStart();
+    }
+
+    private void OnNewTurnStart()
+    {
+        UnitInventory unitInventory = currentTurn.GetComponent<UnitInventory>();
+        unitInventory.UpdateInventoryUI();
     }
 
     public void InitTurnOrder(List<BattleUnit> allUnits)

@@ -23,13 +23,15 @@ MonoBehaviour:
     SerializationNodes: []
   unitName: Tank
   unitSprite: {fileID: -9110243453299497147, guid: 97dba7fd266961d45b11a2dcdfc9cfe4, type: 3}
-  unitClass: 1
+  unitClass: 3
   scalingParameters: {fileID: 11400000, guid: 5f0995f06316e1e4aa3e3f3bad24a246, type: 2}
   usesCustomScaling: 0
   customScalingParameters: {fileID: 0}
-  classAbilities: {fileID: 11400000, guid: 861c83490636f35429bd5f3a89bae0f4, type: 2}
+  classAbilities: {fileID: 0}
   usesCustomAbilities: 0
   customClassAbilities: {fileID: 0}
+  basicAttackRange: 0
+  basicAttackIsMagic: 0
   baseHP: 250
   baseAP: 0
   baseMP: 0
@@ -37,5 +39,4 @@ MonoBehaviour:
   baseArmor: 0
   baseProtection: 0
   baseAgility: 0
-  baseInitiative: 0
   baseImmunities: 

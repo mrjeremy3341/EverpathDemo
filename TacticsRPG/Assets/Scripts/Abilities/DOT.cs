@@ -12,7 +12,7 @@ public class DOT : BaseCondition
     public override void Effect()
     {
         BattleUnit battleUnit = battleConditions.battleUnit;
-        battleUnit.DamageUnit(damage);
+        battleUnit.TakeDamage(damage);
     }
 
     public override void End()

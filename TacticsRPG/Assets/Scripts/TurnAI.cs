@@ -46,10 +46,18 @@ public class TurnAI : MonoBehaviour, ITurn
         {
             desiredAction = CloseDistance();
         }
-
-        
-        Debug.Log(desiredAction.targetCell + ", " + desiredAction.targetUnit);
-        StartCoroutine(ExecuteTurn());
+               
+        if (battleUnit.battleConditions.CheckCondition(Conditions.Stunned) || battleUnit.battleConditions.CheckCondition(Conditions.Sleep))
+        {
+            possibleActions.Clear();
+            EndTurn();
+            Debug.Log("Unit Stunned, cannot move");
+        }
+        else
+        {
+            // Run code on animation manager
+            StartCoroutine(ExecuteTurn());
+        }
     }
 
     private AIaction SimulateActions()
@@ -78,7 +86,7 @@ public class TurnAI : MonoBehaviour, ITurn
 
         if(action.targetUnit != null)
         {
-            attackDamage = BattleCalculations.BasicAttackDamage(battleUnit, action.targetUnit, battleUnit.battleActions.basicAttack.isMagic);
+            attackDamage = BattleCalculations.BasicAttackDamage(battleUnit, action.targetUnit, battleUnit.unitStats.isMagic);
         }
 
         foreach(BattleUnit unit in battleUnit.battleManager.turnManager.turnOrder)
@@ -134,7 +142,7 @@ public class TurnAI : MonoBehaviour, ITurn
     private List<BattleUnit> FindPossibleAttacks(GridCell currentCell)
     {
         List<BattleUnit> possibleTargets = new List<BattleUnit>();
-        foreach(GridCell cell in AStar.FindAttackRange(currentCell, battleUnit.battleActions.basicAttack.attackRange))
+        foreach(GridCell cell in AStar.FindAttackRange(currentCell, battleUnit.unitStats.basicAttackRange))
         {
             if(cell.currentUnit != null && cell.currentUnit.isAlly)
             {
@@ -227,10 +235,10 @@ public class TurnAI : MonoBehaviour, ITurn
             {
                 if(battleUnit.unitStats.currentAP == battleUnit.unitStats.maxAP)
                 {
-                    battleUnit.battleActions.currentAbilites[0].ShowRange();
+                    battleUnit.battleActions.unitAbilities.ShowRange();
                     if (desiredAction.targetUnit.currentCell.selectable)
                     {
-                        battleUnit.battleActions.currentAbilites[0].Execute(desiredAction.targetUnit.currentCell);
+                        battleUnit.battleActions.unitAbilities.Execute(desiredAction.targetUnit.currentCell);
                         battleUnit.unitStats.currentAP = 0;
                         yield return new WaitForSeconds(.1f);
                         yield return StartCoroutine(battleUnit.MoveUnit(desiredAction.targetCell));
@@ -238,7 +246,7 @@ public class TurnAI : MonoBehaviour, ITurn
                     else
                     {
                         GridCell targetCell = null;
-                        foreach(GridCell cell in AStar.FindAttackRange(battleUnit.currentCell, battleUnit.battleActions.currentAbilites[0].range))
+                        foreach(GridCell cell in AStar.FindAttackRange(battleUnit.currentCell, battleUnit.battleActions.unitAbilities.range))
                         {
                             if (cell.selectable)
                             {
@@ -249,14 +257,14 @@ public class TurnAI : MonoBehaviour, ITurn
 
                         if(targetCell != null)
                         {
-                            battleUnit.battleActions.currentAbilites[0].Execute(targetCell);
+                            battleUnit.battleActions.unitAbilities.Execute(targetCell);
                             battleUnit.unitStats.currentAP = 0;
                             yield return new WaitForSeconds(.1f);
                             yield return StartCoroutine(battleUnit.MoveUnit(desiredAction.targetCell));
                         }
                         else
                         {
-                            desiredAction.targetUnit.DamageUnit(BattleCalculations.BasicAttackDamage(battleUnit, desiredAction.targetUnit, battleUnit.battleActions.basicAttack.isMagic));
+                            desiredAction.targetUnit.TakeDamage(BattleCalculations.BasicAttackDamage(battleUnit, desiredAction.targetUnit, battleUnit.unitStats.isMagic));
                             yield return new WaitForSeconds(.1f);
                             yield return StartCoroutine(battleUnit.MoveUnit(desiredAction.targetCell));
                         }
@@ -264,7 +272,7 @@ public class TurnAI : MonoBehaviour, ITurn
                 }
                 else
                 {
-                    desiredAction.targetUnit.DamageUnit(BattleCalculations.BasicAttackDamage(battleUnit, desiredAction.targetUnit, battleUnit.battleActions.basicAttack.isMagic));
+                    desiredAction.targetUnit.TakeDamage(BattleCalculations.BasicAttackDamage(battleUnit, desiredAction.targetUnit, battleUnit.unitStats.isMagic));
                     yield return new WaitForSeconds(.1f);
                     yield return StartCoroutine(battleUnit.MoveUnit(desiredAction.targetCell));
                 }  
@@ -274,17 +282,17 @@ public class TurnAI : MonoBehaviour, ITurn
                 yield return StartCoroutine(battleUnit.MoveUnit(desiredAction.targetCell));
                 if (battleUnit.unitStats.currentAP == battleUnit.unitStats.maxAP)
                 {
-                    battleUnit.battleActions.currentAbilites[0].ShowRange();
+                    battleUnit.battleActions.unitAbilities.ShowRange();
                     if (desiredAction.targetUnit.currentCell.selectable)
                     {
-                        battleUnit.battleActions.currentAbilites[0].Execute(desiredAction.targetUnit.currentCell);
+                        battleUnit.battleActions.unitAbilities.Execute(desiredAction.targetUnit.currentCell);
                         battleUnit.unitStats.currentAP = 0;
                         yield return new WaitForSeconds(.1f);
                     }
                     else
                     {
                         GridCell targetCell = null;
-                        foreach (GridCell cell in AStar.FindAttackRange(battleUnit.currentCell, battleUnit.battleActions.currentAbilites[0].range))
+                        foreach (GridCell cell in AStar.FindAttackRange(battleUnit.currentCell, battleUnit.battleActions.unitAbilities.range))
                         {
                             if (cell.selectable)
                             {
@@ -295,20 +303,20 @@ public class TurnAI : MonoBehaviour, ITurn
 
                         if (targetCell != null)
                         {
-                            battleUnit.battleActions.currentAbilites[0].Execute(targetCell);
+                            battleUnit.battleActions.unitAbilities.Execute(targetCell);
                             battleUnit.unitStats.currentAP = 0;
                             yield return new WaitForSeconds(.1f);
                         }
                         else
                         {
-                            desiredAction.targetUnit.DamageUnit(BattleCalculations.BasicAttackDamage(battleUnit, desiredAction.targetUnit, battleUnit.battleActions.basicAttack.isMagic));
+                            desiredAction.targetUnit.TakeDamage(BattleCalculations.BasicAttackDamage(battleUnit, desiredAction.targetUnit, battleUnit.unitStats.isMagic));
                             yield return new WaitForSeconds(.1f);
                         }
                     }
                 }
                 else
                 {
-                    desiredAction.targetUnit.DamageUnit(BattleCalculations.BasicAttackDamage(battleUnit, desiredAction.targetUnit, battleUnit.battleActions.basicAttack.isMagic));
+                    desiredAction.targetUnit.TakeDamage(BattleCalculations.BasicAttackDamage(battleUnit, desiredAction.targetUnit, battleUnit.unitStats.isMagic));
                     yield return new WaitForSeconds(.1f);
                 }
                 
@@ -348,7 +356,7 @@ public class TurnAI : MonoBehaviour, ITurn
         int power = 0;
         bool canAttack = false;
 
-        foreach (GridCell cell in AStar.FindAttackRange(unit.currentCell, unit.battleActions.basicAttack.attackRange))
+        foreach (GridCell cell in AStar.FindAttackRange(unit.currentCell, unit.unitStats.basicAttackRange))
         {
             if (cell.currentUnit != null && cell.currentUnit.isAlly == !isAlly)
             {
@@ -357,7 +365,7 @@ public class TurnAI : MonoBehaviour, ITurn
         }
         if (canAttack)
         {
-            if (unit.battleActions.basicAttack.isMagic)
+            if (unit.unitStats.isMagic)
             {
                 power += unit.unitStats.magic;
             }
@@ -372,7 +380,7 @@ public class TurnAI : MonoBehaviour, ITurn
 
     public bool InStartRange()
     {
-        foreach(GridCell cell in AStar.FindAttackRange(battleUnit.currentCell, battleUnit.battleActions.basicAttack.attackRange))
+        foreach(GridCell cell in AStar.FindAttackRange(battleUnit.currentCell, battleUnit.unitStats.basicAttackRange))
         {
             if(cell.currentUnit == desiredAction.targetUnit)
             {

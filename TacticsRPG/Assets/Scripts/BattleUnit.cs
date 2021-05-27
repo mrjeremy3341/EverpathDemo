@@ -20,6 +20,10 @@ public class BattleUnit : MonoBehaviour
     public bool waitingForInput = false;
     public ActionMode actionMode = ActionMode.Idle;
 
+    public UnitStatsSO unitInfo;
+    public UnitConditionsSO unitConditions;
+    public UnitInventory unitInventory;
+
     public bool actionUsed = false;
     public bool moveUsed = false;
 
@@ -28,6 +32,8 @@ public class BattleUnit : MonoBehaviour
     private void Awake()
     {
         battleTurn = GetComponent<ITurn>();
+        battleConditions = GetComponentInChildren<BattleConditions>();
+        battleConditions.battleUnit = this;
     }
 
     private void Update()
@@ -82,9 +88,10 @@ public class BattleUnit : MonoBehaviour
         transform.position = targetPosition;
     }
 
-    public void DamageUnit(int damage)
+    public void TakeDamage(int damage)
     {
         unitStats.currentHP -= damage;
+        unitInfo.currentHP -= damage;
         battleManager.uiManager.SpawnDamageCounter(this, damage);
 
         if(unitStats.currentHP < 1)
@@ -93,6 +100,30 @@ public class BattleUnit : MonoBehaviour
             Destroy(this.gameObject);
             battleManager.CheckForVictory();
         }
+    }
+
+    public void ShowBasicAttackRange()
+    {
+        List<GridCell> cellsInRange = AStar.FindAttackRange(battleActions.battleUnit.currentCell, unitStats.basicAttackRange);
+        foreach (GridCell cell in cellsInRange)
+        {
+            if (cell.currentUnit != null && cell.currentUnit.isTargetable)
+            {
+                if (battleActions.battleUnit.isAlly && !cell.currentUnit.isAlly)
+                {
+                    cell.selectable = true;
+                }
+            }
+
+            cell.spriteRenderer.color = Color.red;
+        }
+    }
+
+    public void BasicAttack(BattleUnit target)
+    {
+        int damage = BattleCalculations.BasicAttackDamage(battleActions.battleUnit, target, unitStats.isMagic);
+        target.TakeDamage(damage);
+        battleActions.battleUnit.battleManager.gridManager.ClearCells();
     }
 
     void HealUnit()

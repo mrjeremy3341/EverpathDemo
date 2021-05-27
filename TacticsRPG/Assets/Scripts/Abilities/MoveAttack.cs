@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class MoveAttack : AbilityBehavior
 {
-    public override void Execute(GridCell targetCell)
+    public override void Execute(GridCell targetCell, BattleUnit unit)
     {
-        BattleUnit unit = GetComponentInParent<BattleActions>().battleUnit;
         unit.currentCell.currentUnit = null;
         unit.currentCell = targetCell;
         targetCell.currentUnit = unit;
@@ -14,6 +13,6 @@ public class MoveAttack : AbilityBehavior
 
         unit.waitingForInput = true;
         unit.actionMode = BattleUnit.ActionMode.Attack;
-        unit.battleActions.basicAttack.ShowRange();
+        unit.ShowBasicAttackRange();
     }
 }

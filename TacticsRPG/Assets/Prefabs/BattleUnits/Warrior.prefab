@@ -443,6 +443,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   battleUnit: {fileID: 3783470650741117017}
   basicAttack: {fileID: 3361593210607565621}
+  unitAbilities: {fileID: 0}
   currentAbilites:
   - {fileID: 1727900282136938825}
 --- !u!1 &5241795502373080493
@@ -577,6 +578,7 @@ GameObject:
   - component: {fileID: 3783470650741117017}
   - component: {fileID: 5147727892343323441}
   - component: {fileID: 2414614973743733832}
+  - component: {fileID: 1586552371609869446}
   m_Layer: 0
   m_Name: Warrior
   m_TagString: Untagged
@@ -623,6 +625,8 @@ MonoBehaviour:
   battleConditions: {fileID: 6109270707112334855}
   waitingForInput: 0
   actionMode: 0
+  unitInfo: {fileID: 0}
+  unitConditions: {fileID: 0}
   actionUsed: 0
   moveUsed: 0
   isDead: 0
@@ -664,6 +668,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   battleUnit: {fileID: 0}
+  aiLife: 0
+  aiPower: 0
+  playerLife: 0
+  playerPower: 0
+--- !u!114 &1586552371609869446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6168497832988204143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdeddfaea406ceb4794000beab7294aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectedAbility: {fileID: 11400000, guid: 9b1061f47348283478a361038edf4169, type: 2}
+  battleActions: {fileID: 0}
+  unitAbilities: []
+  actionsHolder: {fileID: 4350396924439751938}
+  level: 1
+  targettingController: {fileID: 0}
+  targetCell: {fileID: 0}
 --- !u!1 &6719166412654374395
 GameObject:
   m_ObjectHideFlags: 0

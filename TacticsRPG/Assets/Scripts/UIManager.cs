@@ -96,7 +96,7 @@ public class UIManager : MonoBehaviour
         currentTurn.waitingForInput = true;
         currentTurn.actionMode = BattleUnit.ActionMode.Attack;
 
-        currentTurn.battleActions.basicAttack.ShowRange();
+        currentTurn.ShowBasicAttackRange();
     }
 
     public void ShowAbilityRange()
@@ -105,7 +105,7 @@ public class UIManager : MonoBehaviour
         currentTurn.waitingForInput = true;
         currentTurn.actionMode = BattleUnit.ActionMode.Ability;
 
-        currentTurn.battleActions.currentAbilites[0].ShowRange();
+        currentTurn.battleActions.unitAbilities.ShowRange();
     }
 
     public void SpawnDamageCounter(BattleUnit target, int damage)

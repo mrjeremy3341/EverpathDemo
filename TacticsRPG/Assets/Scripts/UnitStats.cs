@@ -6,6 +6,9 @@ public class UnitStats : MonoBehaviour
 {
     public string unitName;
 
+    public int basicAttackRange;
+    public bool isMagic;
+
     public int maxHP;
     public int currentHP;
 

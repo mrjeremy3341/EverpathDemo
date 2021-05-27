@@ -6,13 +6,21 @@ using UnityEngine;
 public class TurnManager : MonoBehaviour
 {
     public Queue<BattleUnit> turnOrder = new Queue<BattleUnit>();
-    public BattleUnit currentTurn;
+    public BattleUnit currentTurn;    
+
+    private void Start()
+    {
+
+    }
 
     public void NextTurn()
     {
-        currentTurn.battleConditions.CheckTimer();
+        currentTurn.battleConditions.ExecuteEffects();
+
+        currentTurn.battleConditions.ClickTimer();
         currentTurn.unitStats.currentAP += 1;
-        if(currentTurn.unitStats.currentAP > currentTurn.unitStats.maxAP)
+
+        if (currentTurn.unitStats.currentAP > currentTurn.unitStats.maxAP)
         {
             currentTurn.unitStats.currentAP = currentTurn.unitStats.maxAP;
         }
@@ -21,18 +29,25 @@ public class TurnManager : MonoBehaviour
         {
             turnOrder.Enqueue(currentTurn);
         }
+
         currentTurn = turnOrder.Dequeue();
-        
+
         if (!currentTurn.isDead)
         {
-            currentTurn.battleConditions.ExecuteEffects();
             currentTurn.battleTurn.TakeTurn();
         }
         else
         {
             NextTurn();
         }
-        
+
+        OnNewTurnStart();
+    }
+
+    private void OnNewTurnStart()
+    {
+        UnitInventory unitInventory = currentTurn.GetComponent<UnitInventory>();
+        unitInventory.UpdateInventoryUI();
     }
 
     public void InitTurnOrder(List<BattleUnit> allUnits)
@@ -46,7 +61,6 @@ public class TurnManager : MonoBehaviour
         }
 
         currentTurn = turnOrder.Dequeue();
-        currentTurn.battleConditions.ExecuteEffects();
         currentTurn.battleTurn.TakeTurn();
     }
 }

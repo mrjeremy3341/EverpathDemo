@@ -7,7 +7,7 @@ public class SelfTarget : TargetBehaviour
     public override GridCell[] GetTargets(GridCell targetCell)
     {
         GridCell[] target = new GridCell[1];
-        target[0] = GetComponentInParent<BattleActions>().battleUnit.currentCell;
+        target[0] = GetComponentInParent<BattleUnit>().currentCell;
 
         return target;
 

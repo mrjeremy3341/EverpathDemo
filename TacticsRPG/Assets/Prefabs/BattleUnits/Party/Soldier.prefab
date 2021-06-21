@@ -117,6 +117,7 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -281,8 +282,6 @@ MonoBehaviour:
   battleUnit: {fileID: 3783470650741117017}
   basicAttack: {fileID: 3397870148232506241}
   unitAbilities: {fileID: 4935577309999107890}
-  currentAbilites:
-  - {fileID: 468251781689160311}
 --- !u!1 &4445255150522689633
 GameObject:
   m_ObjectHideFlags: 0
@@ -327,7 +326,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   battleUnit: {fileID: 3783470650741117017}
-  conditions: []
+  unitConditions: {fileID: 0}
 --- !u!1 &5381032489837369086
 GameObject:
   m_ObjectHideFlags: 0
@@ -543,6 +542,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentCell: {fileID: 0}
+  moveNextCell: {fileID: 0}
   isAlly: 1
   isTargetable: 1
   battleManager: {fileID: 0}
@@ -551,8 +551,9 @@ MonoBehaviour:
   battleConditions: {fileID: 5174862205671118649}
   waitingForInput: 0
   actionMode: 0
-  unitInfo: {fileID: 0}
   unitConditions: {fileID: 0}
+  unitInventory: {fileID: 0}
+  unitAnimation: {fileID: 0}
   actionUsed: 0
   moveUsed: 0
   isDead: 0
@@ -569,6 +570,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitName: Soldier
+  basicAttackRange: 0
+  isMagic: 0
   maxHP: 35
   currentHP: 35
   maxAP: 4
@@ -607,13 +610,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdeddfaea406ceb4794000beab7294aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedAbility: {fileID: 11400000, guid: 9b1061f47348283478a361038edf4169, type: 2}
+  selectedAbility: {fileID: 0}
   battleActions: {fileID: 0}
   unitAbilities: []
   actionsHolder: {fileID: 0}
-  level: 1
+  abilityManager: {fileID: 0}
   targettingController: {fileID: 0}
-  targetCell: {fileID: 0}
+  level: 1
+  range: 0
 --- !u!1 &6289420897141303079
 GameObject:
   m_ObjectHideFlags: 0
@@ -821,9 +825,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02d8e232404290343b6de659048e6247, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  battleActions: {fileID: 3498743082971329983}
-  attackRange: 1
-  isMagic: 0
 --- !u!1 &8101566222018467252
 GameObject:
   m_ObjectHideFlags: 0
@@ -1000,19 +1001,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slash
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6103636411988908290, guid: 4821e55b887572d449050ed089d1c6b7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4821e55b887572d449050ed089d1c6b7, type: 3}
---- !u!114 &468251781689160311 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6103636411988908290, guid: 4821e55b887572d449050ed089d1c6b7, type: 3}
-  m_PrefabInstance: {fileID: 5966117741390441333}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e2b57865669a7e408c01eb91d109154, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &7737458175276857824 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4155434111750247061, guid: 4821e55b887572d449050ed089d1c6b7, type: 3}
@@ -1077,7 +1068,8 @@ PrefabInstance:
       propertyPath: battleActions
       value: 
       objectReference: {fileID: 3498743082971329983}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7551489977500396107, guid: d4ceb66c7255bf04ab01c54ef908fe1f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d4ceb66c7255bf04ab01c54ef908fe1f, type: 3}
 --- !u!4 &6345959760193743292 stripped
 Transform:

@@ -13,6 +13,7 @@ public class BattleManager : MonoBehaviour
     public List<BattleUnit> spawnedUnits = new List<BattleUnit>();
 
     public GameObject baseEnemyPrefab;
+    public RuntimeAnimatorController animatorController;
     public GameObject targettingController;
     public GameObject abilityManager;
 
@@ -23,6 +24,11 @@ public class BattleManager : MonoBehaviour
             BattleUnit unit = Instantiate<BattleUnit>(player);
             GridCell cell = spawnCells[Random.Range(0, spawnCells.Count)];
             //////////
+            GameObject gFX = unit.GetComponentInChildren<SpriteRenderer>().gameObject;
+            UnitAnimations unitAnimations = gFX.AddComponent<UnitAnimations>();
+            unitAnimations.unit = unit;
+            Animator animator = gFX.AddComponent<Animator>();
+            animator.runtimeAnimatorController = animatorController;
             UnitConditionsSO _unitConditions = ScriptableObject.CreateInstance<UnitConditionsSO>();
             unit.unitConditions = _unitConditions;
             UnitAbilities unitAbilities = unit.gameObject.GetComponent<UnitAbilities>();

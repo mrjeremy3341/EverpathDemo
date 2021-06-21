@@ -7,15 +7,25 @@ using Sirenix.OdinInspector;
 public class InventoryUI : MonoBehaviour
 {
     public UIManager uiManager;
-    public InventorySlot[] inventorySlots;
+    public InventorySlot[] inventorySlots;    
     [ReadOnly]
     public int freeSlots;
 
+    public bool isShop;
+    ItemShop shop;
+    Inventory shopInventory;
 
     // Start is called before the first frame update
     void Start()
     {
         uiManager = GetComponent<UIManager>();
+
+        if (isShop)
+        {
+            shop = GetComponent<ItemShop>();
+            shopInventory = shop.inventory;
+            PopulateInventorySlots(shopInventory);
+        }
     }
 
     // Update is called once per frame
@@ -26,7 +36,10 @@ public class InventoryUI : MonoBehaviour
 
     public void RelayUseItem(InventoryItem item)
     {
-        uiManager.battleManager.turnManager.currentTurn.unitInventory.UseItem(item);
+        if (!isShop)
+        {
+            uiManager.battleManager.turnManager.currentTurn.unitInventory.UseItem(item);
+        }        
     }
 
     public void UpdateFreeSlots()
@@ -43,11 +56,16 @@ public class InventoryUI : MonoBehaviour
         freeSlots = inventorySlots.Length - occupiedSlots;
     }
 
-    public void PopulateInventorySlots(Inventory unitInventory)
+    public void PopulateInventorySlots(Inventory inventory)
     {
+        if (isShop)
+        {
+            inventory = shopInventory;
+        }
+
         ClearAllSlots();
 
-        if (unitInventory.heldInventory.Count > inventorySlots.Length)
+        if (inventory.heldInventory.Count > inventorySlots.Length)
         {
             Debug.Log("Too many items");
         }
@@ -55,12 +73,12 @@ public class InventoryUI : MonoBehaviour
         {
             for (int i = 0; i < inventorySlots.Length; i++)
             {
-                if (i <= unitInventory.heldInventory.Count - 1)
+                if (i <= inventory.heldInventory.Count - 1)
                 {
-                    Debug.Log(i + " " + unitInventory.heldInventory[i]);
-                    inventorySlots[i].item = unitInventory.heldInventory[i];
-                    inventorySlots[i].slotImage.sprite = unitInventory.heldInventory[i].itemImage;
-                    inventorySlots[i].itemText.text = unitInventory.heldInventory[i].itemName;
+                    Debug.Log(i + " " + inventory.heldInventory[i]);
+                    inventorySlots[i].item = inventory.heldInventory[i];
+                    inventorySlots[i].slotImage.sprite = inventory.heldInventory[i].itemImage;
+                    inventorySlots[i].itemText.text = inventory.heldInventory[i].itemName;
                     inventorySlots[i].isOccupied = true;
                 }
                 else

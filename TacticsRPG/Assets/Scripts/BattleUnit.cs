@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Sirenix.OdinInspector;
+using System;
 
 public class BattleUnit : MonoBehaviour
 {
@@ -10,6 +12,8 @@ public class BattleUnit : MonoBehaviour
     }
 
     public GridCell currentCell;
+    [ReadOnly]
+    public GridCell moveNextCell;
     public bool isAlly;
     public bool isTargetable = true;
     public BattleManager battleManager;
@@ -19,10 +23,10 @@ public class BattleUnit : MonoBehaviour
     public ITurn battleTurn;
     public bool waitingForInput = false;
     public ActionMode actionMode = ActionMode.Idle;
-
-    public UnitStatsSO unitInfo;
     public UnitConditionsSO unitConditions;
     public UnitInventory unitInventory;
+    public UnitAnimations unitAnimation;    // assigned by UnitAnimation due to script execution
+    CellDirection cellDir;
 
     public bool actionUsed = false;
     public bool moveUsed = false;
@@ -33,7 +37,12 @@ public class BattleUnit : MonoBehaviour
     {
         battleTurn = GetComponent<ITurn>();
         battleConditions = GetComponentInChildren<BattleConditions>();
-        battleConditions.battleUnit = this;
+        battleConditions.battleUnit = this;     
+    }
+
+    private void Start()
+    {
+        
     }
 
     private void Update()
@@ -57,6 +66,8 @@ public class BattleUnit : MonoBehaviour
         this.currentCell.currentUnit = null;
         List<GridCell> path = AStar.FindPath(currentCell, newCell);
 
+        
+
         foreach (GridCell c in path)
         {
             c.spriteRenderer.color = Color.green;
@@ -64,10 +75,18 @@ public class BattleUnit : MonoBehaviour
 
         foreach (GridCell c in path)
         {
-            StartCoroutine(LerpPosition(new Vector2(c.transform.position.x, c.transform.position.y + ((c.elevation - 1) * .12f)), .5f)); // TODO: I think there is a better way to account fo elevation height but thsi wroks for now
+            int directionNo = Array.IndexOf(currentCell.neighbors, c);
+            cellDir = (CellDirection)directionNo;
+            unitAnimation.WalkSwitch(cellDir);
+
+            StartCoroutine(LerpPosition(new Vector2(c.transform.position.x, c.transform.position.y + ((c.elevation - 1) * .12f)), .5f));
             yield return new WaitForSeconds(.5f);
+
+            currentCell = c;
         }
-        
+
+        unitAnimation.SetIdle(cellDir);
+
         this.currentCell = newCell;
         this.currentCell.currentUnit = this;
         moveUsed = true;
@@ -91,7 +110,6 @@ public class BattleUnit : MonoBehaviour
     public void TakeDamage(int damage)
     {
         unitStats.currentHP -= damage;
-        unitInfo.currentHP -= damage;
         battleManager.uiManager.SpawnDamageCounter(this, damage);
 
         if(unitStats.currentHP < 1)

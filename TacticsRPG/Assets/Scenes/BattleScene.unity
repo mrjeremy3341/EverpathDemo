@@ -2711,6 +2711,7 @@ MonoBehaviour:
   - {fileID: 1800683258}
   - {fileID: 1084239623}
   freeSlots: 0
+  isShop: 0
 --- !u!1 &1314875988
 GameObject:
   m_ObjectHideFlags: 0
@@ -4304,6 +4305,7 @@ MonoBehaviour:
   - {fileID: 3783470650741117017, guid: a144747321c2b044fad47c8a936f9e95, type: 3}
   spawnedUnits: []
   baseEnemyPrefab: {fileID: 0}
+  animatorController: {fileID: 9100000, guid: 0fb9f84fcc936bc498b80267677668bc, type: 2}
   targettingController: {fileID: 1714291926}
   abilityManager: {fileID: 510639836}
 --- !u!4 &2041722087

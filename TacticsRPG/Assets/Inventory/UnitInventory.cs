@@ -26,16 +26,23 @@ public class UnitInventory : MonoBehaviour
 
     public void UpdateInventoryUI()
     {
-        if (inventory != null)
+        if (!inventoryUI.isShop)
         {
-            if (inventory.isPartyMember)
+            if (inventory != null)
             {
-                inventoryUI.PopulateInventorySlots(inventory);
+                if (inventory.isPartyMember)
+                {
+                    inventoryUI.PopulateInventorySlots(inventory);
+                }
+                else
+                {
+                    inventoryUI.ClearAllSlots();
+                }
             }
-            else
-            {
-                inventoryUI.ClearAllSlots();
-            }
+        }
+        else
+        {
+            inventoryUI.PopulateInventorySlots(inventory);
         }
     }
 }

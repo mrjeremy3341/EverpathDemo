@@ -1,617 +1,77 @@
 Using pre-set license
-Built from '2020.2/release' branch; Version is '2020.2.1f1 (270dd8c3da1c) revision 2559448'; Using compiler version '192528614'; Build Type 'Release'
-OS: 'Windows 10  (10.0.0) 64bit' Language: 'en' Physical Memory: 8038 MB
+Built from '2020.3/staging' branch; Version is '2020.3.10f1 (297d780c91bc) revision 2719096'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Pro; OS build 19042.928; Version 2009; 64bit' Language: 'en' Physical Memory: 16333 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
 
  COMMAND LINE ARGUMENTS:
-C:\Program Files\Unity\Hub\Editor\2020.2.1f1\Editor\Unity.exe
+E:\Program Files\Unity\Hub\Editor\2020.3.10f1\Editor\Unity.exe
 -adb2
 -batchMode
 -noUpm
 -name
 AssetImportWorker0
 -projectPath
-C:/Users/mrjer/Documents/GitHub/EverpathDemo/TacticsRPG
+E:/GitHub/EverpathDemo/TacticsRPG
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-61622
-Successfully changed project path to: C:/Users/mrjer/Documents/GitHub/EverpathDemo/TacticsRPG
-C:/Users/mrjer/Documents/GitHub/EverpathDemo/TacticsRPG
+56074
+Successfully changed project path to: E:/GitHub/EverpathDemo/TacticsRPG
+E:/GitHub/EverpathDemo/TacticsRPG
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 120.70 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 27.84 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Initialize engine version: 2020.2.1f1 (270dd8c3da1c)
-[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.2.1f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path C:/Users/mrjer/Documents/GitHub/EverpathDemo/TacticsRPG/Assets
+Initialize engine version: 2020.3.10f1 (297d780c91bc)
+[Subsystems] Discovering subsystems at path E:/Program Files/Unity/Hub/Editor/2020.3.10f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path E:/GitHub/EverpathDemo/TacticsRPG/Assets
 GfxDevice: creating device client; threaded=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: NVIDIA GeForce GTX 1650 with Max-Q Design (ID=0x1f91)
+    Renderer: NVIDIA GeForce RTX 2070 (ID=0x1f07)
     Vendor:   
-    VRAM:     3962 MB
-    Driver:   27.21.14.5655
+    VRAM:     8031 MB
+    Driver:   27.21.14.6611
 Initialize mono
-Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.2.1f1/Editor/Data/Managed'
-Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
-Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.2.1f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56932
+Mono path[0] = 'E:/Program Files/Unity/Hub/Editor/2020.3.10f1/Editor/Data/Managed'
+Mono path[1] = 'E:/Program Files/Unity/Hub/Editor/2020.3.10f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'E:/Program Files/Unity/Hub/Editor/2020.3.10f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56416
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
-Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.2.1f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
-Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.2.1f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.006663 seconds.
+Register platform support module: E:/Program Files/Unity/Hub/Editor/2020.3.10f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.001079 seconds.
 Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 102.74 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 24.76 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in 10.052 seconds
+- Completed reload, in  0.933 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.023974 seconds.
+Registered in 0.003714 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.61 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 0.30 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  4.152 seconds
+- Completed reload, in  0.953 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.08 seconds
-Refreshing native plugins compatible for Editor in 0.85 ms, found 1 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Refreshing native plugins compatible for Editor in 0.29 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1223 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 69.2 MB.
-System memory in use after: 69.3 MB.
+Unloading 1230 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 70.1 MB.
+System memory in use after: 70.2 MB.
 
-Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 1712.
-Total: 56.540800 ms (FindLiveObjects: 0.423300 ms CreateObjectMapping: 0.259900 ms MarkObjects: 55.702800 ms  DeleteObjects: 0.150200 ms)
-
-========================================================================
-Received Import Request.
-  path: Assets/Units
-  artifactKey: Guid(45247b386adb9e64dbca370ecf73272e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Units using Guid(45247b386adb9e64dbca370ecf73272e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5644f6005c41cdf637d7c94787c23dfe') in 0.046997 seconds
-  Import took 0.056735 seconds .
+Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 1721.
+Total: 15.033900 ms (FindLiveObjects: 0.132400 ms CreateObjectMapping: 0.026200 ms MarkObjects: 14.808600 ms  DeleteObjects: 0.065700 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 11.057236 seconds.
-  path: Assets/Abilities/Acolyte
-  artifactKey: Guid(f320a42f2a94d4f4cb780d57dd5789fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Abilities/Acolyte using Guid(f320a42f2a94d4f4cb780d57dd5789fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8220c747d0fa1f44f8ff205fe31d1e48') in 0.033547 seconds
-  Import took 0.043866 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.004572 seconds.
-  path: Assets/Abilities/Acolyte
-  artifactKey: Guid(f320a42f2a94d4f4cb780d57dd5789fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Abilities/Acolyte using Guid(f320a42f2a94d4f4cb780d57dd5789fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8220c747d0fa1f44f8ff205fe31d1e48') in 0.013786 seconds
-  Import took 0.026705 seconds .
-
-========================================================================
-Received Prepare
-Refreshing native plugins compatible for Editor in 9.80 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 15 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 44.3 MB.
-System memory in use after: 44.4 MB.
-
-Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 1712.
-Total: 20.303100 ms (FindLiveObjects: 0.185300 ms CreateObjectMapping: 0.060300 ms MarkObjects: 20.033300 ms  DeleteObjects: 0.022000 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.028971 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.40 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  3.934 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.94 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1200 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 68.2 MB.
-System memory in use after: 68.3 MB.
-
-Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 1715.
-Total: 52.668900 ms (FindLiveObjects: 0.411700 ms CreateObjectMapping: 0.216200 ms MarkObjects: 51.980300 ms  DeleteObjects: 0.056100 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 498.542004 seconds.
-  path: Assets/Abilities/Apperentice
-  artifactKey: Guid(37c470a0e6702f64298de588d2d90470) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Abilities/Apperentice using Guid(37c470a0e6702f64298de588d2d90470) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eab55d668beef1f47b6b70c32b42b21e') in 0.040749 seconds
-  Import took 0.052373 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 6.973071 seconds.
-  path: Assets/Abilities/Soldier/Double Shot.asset
-  artifactKey: Guid(9507495cf2af89b4c92525651e9c8911) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Abilities/Soldier/Double Shot.asset using Guid(9507495cf2af89b4c92525651e9c8911) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '705d27fc8ba0d1554267e2cf29341b73') in 0.120775 seconds
-  Import took 0.125887 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000640 seconds.
-  path: Assets/Abilities/Soldier/Double Shot.asset
-  artifactKey: Guid(9507495cf2af89b4c92525651e9c8911) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Abilities/Soldier/Double Shot.asset using Guid(9507495cf2af89b4c92525651e9c8911) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '705d27fc8ba0d1554267e2cf29341b73') in 0.003660 seconds
-  Import took 0.006872 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 10.829323 seconds.
-  path: Assets/Abilities/Soldier
-  artifactKey: Guid(c727b86574b8e7847949fa09463d8213) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Abilities/Soldier using Guid(c727b86574b8e7847949fa09463d8213) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1920876446659707f706f054ea68fc0c') in 0.024351 seconds
-  Import took 0.031890 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 9.285167 seconds.
-  path: Assets/Abilities/Soldier/Slash.asset
-  artifactKey: Guid(cfcd0e476f097ec4b863285cbaa4e6cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Abilities/Soldier/Slash.asset using Guid(cfcd0e476f097ec4b863285cbaa4e6cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c27043c5a048bdc320a64981a2038c5f') in 0.012119 seconds
-  Import took 0.016159 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 39.493487 seconds.
-  path: Assets/Abilities/Soldier/Taunt.asset
-  artifactKey: Guid(7c7a58230c747d34dac6044bc48facab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Abilities/Soldier/Taunt.asset using Guid(7c7a58230c747d34dac6044bc48facab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5813adc79fbaff4d8dcdf570561c73bd') in 0.012705 seconds
-  Import took 0.016637 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 15.590892 seconds.
-  path: Assets/Abilities/Soldier/Upper Cut.asset
-  artifactKey: Guid(85cc06da2902bd248bff247e87d054ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Abilities/Soldier/Upper Cut.asset using Guid(85cc06da2902bd248bff247e87d054ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'adb078dca91d73881de896080010996e') in 0.011945 seconds
-  Import took 0.016556 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 16.461922 seconds.
-  path: Assets/Abilities/Soldier/Pommel Strike.asset
-  artifactKey: Guid(020846d153ffb404cb2d9cb3264e28cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Abilities/Soldier/Pommel Strike.asset using Guid(020846d153ffb404cb2d9cb3264e28cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f14ca98cd724e3402a050ead75c93afc') in 0.010564 seconds
-  Import took 0.014159 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 8.945299 seconds.
-  path: Assets/Abilities/Soldier/Stab.asset
-  artifactKey: Guid(5e2ae124c33ed48408f4d4b719a49a7a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Abilities/Soldier/Stab.asset using Guid(5e2ae124c33ed48408f4d4b719a49a7a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '55629f7aeeaa4417d49e7e24228c194e') in 0.012319 seconds
-  Import took 0.016665 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 22.962596 seconds.
-  path: Assets/Abilities/Scout/Hammer of Dawn.asset
-  artifactKey: Guid(797ba20acc79fd74ebb8661879d93a6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Abilities/Scout/Hammer of Dawn.asset using Guid(797ba20acc79fd74ebb8661879d93a6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '86c466ae670554086b9b576286898788') in 0.045506 seconds
-  Import took 0.056283 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.055937 seconds.
-  path: Assets/Abilities/Scout/Hammer of Dawn.asset
-  artifactKey: Guid(797ba20acc79fd74ebb8661879d93a6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Abilities/Scout/Hammer of Dawn.asset using Guid(797ba20acc79fd74ebb8661879d93a6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '86c466ae670554086b9b576286898788') in 0.010391 seconds
-  Import took 0.017495 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 6.312101 seconds.
-  path: Assets/Abilities/Scout
-  artifactKey: Guid(d2a56cfe7232c2e40960539a5c3c0972) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Abilities/Scout using Guid(d2a56cfe7232c2e40960539a5c3c0972) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c847db0ccbc44618d23ba760016ed632') in 0.024582 seconds
-  Import took 0.033305 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 22.621805 seconds.
-  path: Assets/Abilities/Scout/Stab.asset
-  artifactKey: Guid(78ebd55eb36f43b489b6b64439bfbd2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Abilities/Scout/Stab.asset using Guid(78ebd55eb36f43b489b6b64439bfbd2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '71c038bb9b61b21b10ef6f29522f11b1') in 0.014494 seconds
-  Import took 0.027249 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 7.057562 seconds.
-  path: Assets/Abilities/Scout/Shoot.asset
-  artifactKey: Guid(2b60781a56450624e87bd24d4dd24d5d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Abilities/Scout/Shoot.asset using Guid(2b60781a56450624e87bd24d4dd24d5d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '62e4ab0746b5dc79a4e6ddca078ab566') in 0.010675 seconds
-  Import took 0.013922 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 19.068334 seconds.
-  path: Assets/Abilities/Scout/Snake Bite.asset
-  artifactKey: Guid(79227e3f98189394499dbe52d9f0f59d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Abilities/Scout/Snake Bite.asset using Guid(79227e3f98189394499dbe52d9f0f59d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ee8f4199607026ec3066fd0b6a9ef329') in 0.013084 seconds
-  Import took 0.017410 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 10.261713 seconds.
-  path: Assets/Abilities/Scout/Hindering Strike.asset
-  artifactKey: Guid(7b6912c47e2236f439be558eff2cf712) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Abilities/Scout/Hindering Strike.asset using Guid(7b6912c47e2236f439be558eff2cf712) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '34d71001634bf5dc8137e663d900e1fc') in 0.012022 seconds
-  Import took 0.015637 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 18.086124 seconds.
-  path: Assets/Abilities/Scout/Hindering Shot.asset
-  artifactKey: Guid(7b6912c47e2236f439be558eff2cf712) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Abilities/Scout/Hindering Shot.asset using Guid(7b6912c47e2236f439be558eff2cf712) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f8f71c88c135d0cd65c81ebd198af184') in 0.013423 seconds
-  Import took 0.018581 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 10.000233 seconds.
-  path: Assets/Abilities/Scout/Dodge and Roll.asset
-  artifactKey: Guid(9cbe080929e360d49af1dc6aef16d108) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Abilities/Scout/Dodge and Roll.asset using Guid(9cbe080929e360d49af1dc6aef16d108) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aefcaaa095c7b1d7d04f7fb3092768cf') in 0.010880 seconds
-  Import took 0.014132 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 21.664541 seconds.
-  path: Assets/Abilities/Scout/Combo Attack.asset
-  artifactKey: Guid(e7fcb3f283aeb1a4abf7a579af41965a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Abilities/Scout/Combo Attack.asset using Guid(e7fcb3f283aeb1a4abf7a579af41965a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b4198ef4163f5038a034516e11905746') in 0.011461 seconds
-  Import took 0.014679 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 9.690918 seconds.
-  path: Assets/Abilities/Soldier/Bandaging.asset
-  artifactKey: Guid(f4f629f13a9f21a4d9f12321039405ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Abilities/Soldier/Bandaging.asset using Guid(f4f629f13a9f21a4d9f12321039405ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '34cf9fcf0bf5da093b055147f384ac26') in 0.021248 seconds
-  Import took 0.026752 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 15.103135 seconds.
-  path: Assets/Abilities/Apprentice
-  artifactKey: Guid(f005f6060b035794fb1760ae4cc9d673) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Abilities/Apprentice using Guid(f005f6060b035794fb1760ae4cc9d673) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a09acee2ee026e4671d1dc6e4f9c7b1e') in 0.037408 seconds
-  Import took 0.048430 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.023604 seconds.
-  path: Assets/Abilities/Apprentice
-  artifactKey: Guid(f005f6060b035794fb1760ae4cc9d673) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Abilities/Apprentice using Guid(f005f6060b035794fb1760ae4cc9d673) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a09acee2ee026e4671d1dc6e4f9c7b1e') in 0.007087 seconds
-  Import took 0.013733 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 13.045155 seconds.
-  path: Assets/Abilities/Apprentice/Primoridal Shot.asset
-  artifactKey: Guid(0dc4585f688c282419159db6dfef35b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Abilities/Apprentice/Primoridal Shot.asset using Guid(0dc4585f688c282419159db6dfef35b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ac88257533b1ca14cb9e857bcd25014c') in 0.011978 seconds
-  Import took 0.016060 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.001429 seconds.
-  path: Assets/Abilities/Apprentice/Primoridal Shot.asset
-  artifactKey: Guid(0dc4585f688c282419159db6dfef35b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Abilities/Apprentice/Primoridal Shot.asset using Guid(0dc4585f688c282419159db6dfef35b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ac88257533b1ca14cb9e857bcd25014c') in 0.004836 seconds
-  Import took 0.008822 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 23.337785 seconds.
-  path: Assets/Abilities/Apprentice/Primordial Shot.asset
-  artifactKey: Guid(0dc4585f688c282419159db6dfef35b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Abilities/Apprentice/Primordial Shot.asset using Guid(0dc4585f688c282419159db6dfef35b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0dbd4d7256db12b26ecd03ea28aa613d') in 0.012135 seconds
-  Import took 0.016169 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 12.945357 seconds.
-  path: Assets/Abilities/Apprentice/Primordial Blast.asset
-  artifactKey: Guid(837acc0ca216cbb4ca1c6f80a4f27e5b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Abilities/Apprentice/Primordial Blast.asset using Guid(837acc0ca216cbb4ca1c6f80a4f27e5b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bf5b4c68eb462fe3deca2a8d6f1cb87b') in 0.012293 seconds
-  Import took 0.016250 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 14.607219 seconds.
-  path: Assets/Abilities/Apprentice/Energy Snap.asset
-  artifactKey: Guid(8d18baa17f9ab0945bdf5aea0d0b68fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Abilities/Apprentice/Energy Snap.asset using Guid(8d18baa17f9ab0945bdf5aea0d0b68fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0c82688c32e9b3dbdfe350ce37bb99b2') in 0.012866 seconds
-  Import took 0.016781 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 11.524869 seconds.
-  path: Assets/Abilities/Apprentice/Teleport.asset
-  artifactKey: Guid(0b76e3a22db57ec4c8f0d395c95b17c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Abilities/Apprentice/Teleport.asset using Guid(0b76e3a22db57ec4c8f0d395c95b17c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b7fd6bf1b88107e4b7989925873ec7e6') in 0.011886 seconds
-  Import took 0.015616 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 15.804151 seconds.
-  path: Assets/Abilities/Apprentice/Status Trap.asset
-  artifactKey: Guid(b7bc94a92bd7cc548a25099f008b06bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Abilities/Apprentice/Status Trap.asset using Guid(b7bc94a92bd7cc548a25099f008b06bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a3b749d312350cbb19a93ef9bfa5d938') in 0.012827 seconds
-  Import took 0.017024 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 13.997077 seconds.
-  path: Assets/Abilities/Apprentice/Primordial Trap.asset
-  artifactKey: Guid(aea54d9ab88831d45a647f6246550999) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Abilities/Apprentice/Primordial Trap.asset using Guid(aea54d9ab88831d45a647f6246550999) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '22f00f8c862620f89d9fd15c660de0c4') in 0.011851 seconds
-  Import took 0.015105 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 10.116953 seconds.
-  path: Assets/Abilities/Apprentice/Stasis Trap.asset
-  artifactKey: Guid(b7bc94a92bd7cc548a25099f008b06bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Abilities/Apprentice/Stasis Trap.asset using Guid(b7bc94a92bd7cc548a25099f008b06bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '50747b7e8906547a04dc00346b986b96') in 0.013031 seconds
-  Import took 0.017125 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 29.420752 seconds.
-  path: Assets/Abilities/Apperentice/Fireball.asset
-  artifactKey: Guid(041764d1da705994899038e41b071ab0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Abilities/Apperentice/Fireball.asset using Guid(041764d1da705994899038e41b071ab0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cceed9e2078927661b1e5021c1e4f3f6') in 0.037171 seconds
-  Import took 0.047595 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 26.658976 seconds.
-  path: Assets/Abilities/Acolyte/Test Ability.asset
-  artifactKey: Guid(9b1061f47348283478a361038edf4169) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Abilities/Acolyte/Test Ability.asset using Guid(9b1061f47348283478a361038edf4169) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bf02506d3d34a204a354829ae2f6053f') in 0.023506 seconds
-  Import took 0.028326 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.011329 seconds.
-  path: Assets/Abilities/Acolyte/Test Ability.asset
-  artifactKey: Guid(9b1061f47348283478a361038edf4169) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Abilities/Acolyte/Test Ability.asset using Guid(9b1061f47348283478a361038edf4169) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bf02506d3d34a204a354829ae2f6053f') in 0.005409 seconds
-  Import took 0.009470 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 21.331746 seconds.
-  path: Assets/Abilities/Acolyte/Word of Healing.asset
-  artifactKey: Guid(bac7f27a0b844014c9bbb60912305564) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Abilities/Acolyte/Word of Healing.asset using Guid(bac7f27a0b844014c9bbb60912305564) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ac7673d69e3d7f5b2461ba0afeb451a1') in 0.011117 seconds
-  Import took 0.014588 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 11.280475 seconds.
-  path: Assets/Abilities/Acolyte/Holy Strike.asset
-  artifactKey: Guid(98908b7fa2a350540afef474e3b1a93e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Abilities/Acolyte/Holy Strike.asset using Guid(98908b7fa2a350540afef474e3b1a93e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e4a2bb3c1bb0cc99b008944b7f37682') in 0.010181 seconds
-  Import took 0.013409 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 15.101553 seconds.
-  path: Assets/Abilities/Acolyte/Regeneration.asset
-  artifactKey: Guid(991ef1cdafb591b4fbf4fd12331bbefe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Abilities/Acolyte/Regeneration.asset using Guid(991ef1cdafb591b4fbf4fd12331bbefe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ecf5edafe1130183978ddf678533973f') in 0.012310 seconds
-  Import took 0.016553 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 13.808946 seconds.
-  path: Assets/Abilities/Acolyte/Fear the Divine.asset
-  artifactKey: Guid(81956fe4cbb20f649a8662cf9a10c27c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Abilities/Acolyte/Fear the Divine.asset using Guid(81956fe4cbb20f649a8662cf9a10c27c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f3241f4c1ed718e8510ad265f403f15b') in 0.013050 seconds
-  Import took 0.017075 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 11.675727 seconds.
-  path: Assets/Abilities/Acolyte/Antivenom.asset
-  artifactKey: Guid(a51fd00747bc16045a28afee638c2c96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Abilities/Acolyte/Antivenom.asset using Guid(a51fd00747bc16045a28afee638c2c96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c19e7b4e52810ada1fa45f2100677d4d') in 0.012516 seconds
-  Import took 0.016430 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 13.591425 seconds.
-  path: Assets/Abilities/Acolyte/Holy Awakening.asset
-  artifactKey: Guid(170287d71dd96c84980d170924149167) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Abilities/Acolyte/Holy Awakening.asset using Guid(170287d71dd96c84980d170924149167) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '793a108bb3ea87721e6f5e10f23e58f4') in 0.011993 seconds
-  Import took 0.015424 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 502.100519 seconds.
-  path: Assets/Abilities/Enemy
-  artifactKey: Guid(4ae43d599018db34fa2b83724011c6dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Abilities/Enemy using Guid(4ae43d599018db34fa2b83724011c6dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dd62280fdb1f209ba0378b5ea11d595e') in 0.034849 seconds
-  Import took 0.045165 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.003177 seconds.
-  path: Assets/Abilities/Enemy
-  artifactKey: Guid(4ae43d599018db34fa2b83724011c6dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Abilities/Enemy using Guid(4ae43d599018db34fa2b83724011c6dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dd62280fdb1f209ba0378b5ea11d595e') in 0.012847 seconds
-  Import took 0.021731 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.111881 seconds.
-  path: Assets/Abilities/Enemy/Venomous Cask.asset
-  artifactKey: Guid(2a2bd47a7e0b4cc45840119a5f893b9c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Abilities/Enemy/Venomous Cask.asset using Guid(2a2bd47a7e0b4cc45840119a5f893b9c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '252995b76ec66a03670b6a89310271fa') in 0.044168 seconds
-  Import took 0.057010 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 9.601018 seconds.
-  path: Assets/Abilities/Enemy/Slice and Dice.asset
-  artifactKey: Guid(894db2ef09743ec41b3d6492014e771e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Abilities/Enemy/Slice and Dice.asset using Guid(894db2ef09743ec41b3d6492014e771e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6e002195000029864fd82d488ab11116') in 0.011845 seconds
-  Import took 0.016467 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 38.048410 seconds.
-  path: Assets/Abilities/Enemy/Corrupting Strike.asset
-  artifactKey: Guid(657281738414fcb44a7f75274adebcd4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Abilities/Enemy/Corrupting Strike.asset using Guid(657281738414fcb44a7f75274adebcd4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '45e5bd2db4057c31c15053f758a68f72') in 0.010988 seconds
-  Import took 0.014585 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 22.377057 seconds.
-  path: Assets/Abilities/Enemy/Pommel Strike.asset
-  artifactKey: Guid(44040b05ca9ba394bb89c240a14c1aa8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Abilities/Enemy/Pommel Strike.asset using Guid(44040b05ca9ba394bb89c240a14c1aa8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '21189eafcb3f8344926af05dae8fc8aa') in 0.009809 seconds
-  Import took 0.012707 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 16.596932 seconds.
-  path: Assets/Abilities/Enemy/Pinning Shot.asset
-  artifactKey: Guid(16d9370110a79b841a2d6503da426a29) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Abilities/Enemy/Pinning Shot.asset using Guid(16d9370110a79b841a2d6503da426a29) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1d2050873fdc4a6c48d5549fd1f37ac0') in 0.012048 seconds
-  Import took 0.015278 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 146.128091 seconds.
-  path: Assets/Abilities/Enemy/Corrupting Shot.asset
-  artifactKey: Guid(7680424a248f6b54cbff2adf4b48aaed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Abilities/Enemy/Corrupting Shot.asset using Guid(7680424a248f6b54cbff2adf4b48aaed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '57314d5f57adb71ce14817923ec0717f') in 0.011492 seconds
-  Import took 0.014815 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 18.120729 seconds.
-  path: Assets/Abilities/Enemy/Arcane Crack.asset
-  artifactKey: Guid(c13f4aa6703614f4db05e3d75c624b9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Abilities/Enemy/Arcane Crack.asset using Guid(c13f4aa6703614f4db05e3d75c624b9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2b42c119e3926e0cef93f78fca075f98') in 0.010811 seconds
-  Import took 0.014992 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 16.105363 seconds.
-  path: Assets/Abilities/Enemy/Corrupting Blast.asset
-  artifactKey: Guid(813f5d2a01bcd174cb8ed1b0ce03d9ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Abilities/Enemy/Corrupting Blast.asset using Guid(813f5d2a01bcd174cb8ed1b0ce03d9ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '144ce4d6e70d09f92590b2749c8abf16') in 0.012112 seconds
-  Import took 0.015653 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 24.982067 seconds.
-  path: Assets/Abilities/Enemy/Healing Word.asset
-  artifactKey: Guid(35f75d0b2de746944b82149e09441fd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Abilities/Enemy/Healing Word.asset using Guid(35f75d0b2de746944b82149e09441fd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '438e4be6095ad86ecaac7db1f107221a') in 0.011380 seconds
-  Import took 0.014274 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 15.481740 seconds.
-  path: Assets/Abilities/Enemy/Aura of Corruption.asset
-  artifactKey: Guid(f3d07350fa60ba745933b2d9885db082) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Abilities/Enemy/Aura of Corruption.asset using Guid(f3d07350fa60ba745933b2d9885db082) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f1c0e433cb16c29f19e8a09b498a104e') in 0.012280 seconds
-  Import took 0.016391 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 14.009496 seconds.
-  path: Assets/Abilities/Enemy/Divine Cuts.asset
-  artifactKey: Guid(aef61f10accfcf349824588e43556f7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Abilities/Enemy/Divine Cuts.asset using Guid(aef61f10accfcf349824588e43556f7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd877047a177f8e47d7e8bf162f998009') in 0.015354 seconds
-  Import took 0.023533 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 30.886899 seconds.
-  path: Assets/Abilities/Enemy/Stab of Corruption.asset
-  artifactKey: Guid(050ba97860dc31c4dbd23053e7313e5c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Abilities/Enemy/Stab of Corruption.asset using Guid(050ba97860dc31c4dbd23053e7313e5c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd9d8c006a34b602f1fa6aea51799d0a9') in 0.012618 seconds
-  Import took 0.016833 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 14.804754 seconds.
-  path: Assets/Abilities/Enemy/Shadow Strike.asset
-  artifactKey: Guid(086f358a7d23f824eab19f99127e8bd4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Abilities/Enemy/Shadow Strike.asset using Guid(086f358a7d23f824eab19f99127e8bd4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9669904dfb4b9b0048a4cb6fcac6a239') in 0.030444 seconds
-  Import took 0.038816 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 15.287808 seconds.
-  path: Assets/Abilities/Enemy/Battle Cry.asset
-  artifactKey: Guid(aaf420c955cf6fb42a674f3bc4697bd0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Abilities/Enemy/Battle Cry.asset using Guid(aaf420c955cf6fb42a674f3bc4697bd0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '39ce8dc177c94fdab2772153e1c8b3de') in 0.011773 seconds
-  Import took 0.015091 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 16.645741 seconds.
-  path: Assets/Abilities/Enemy/Shield of Corruption.asset
-  artifactKey: Guid(d7e345b794174d941b4d862988026ce3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Abilities/Enemy/Shield of Corruption.asset using Guid(d7e345b794174d941b4d862988026ce3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5f0907994906b41a8b18fa90110cc022') in 0.015388 seconds
-  Import took 0.018849 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.012020 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.47 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.718 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.46 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1200 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 68.6 MB.
-System memory in use after: 68.7 MB.
-
-Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 1718.
-Total: 23.319200 ms (FindLiveObjects: 0.190700 ms CreateObjectMapping: 0.057400 ms MarkObjects: 23.032200 ms  DeleteObjects: 0.036600 ms)
+  path: Assets/Square.png
+  artifactKey: Guid(e0e8d9f083d9a094caf9a6c6d790869e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Square.png using Guid(e0e8d9f083d9a094caf9a6c6d790869e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6f79cec650071b2102f6d5b050098d97') in 0.108751 seconds
+  Import took 0.110626 seconds .
 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file

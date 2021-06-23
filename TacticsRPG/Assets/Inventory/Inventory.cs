@@ -11,6 +11,7 @@ public class Inventory : ScriptableObject
 
     public string inventoryOwner;
     public bool isPartyMember;
+    public bool isShop;
 
     public void AddToInventory(InventoryItem item)
     {

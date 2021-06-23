@@ -24,7 +24,10 @@ public class UnitAbilities : MonoBehaviour
     {
         //LoadAbilities();        
         battleActions = GetComponentInChildren<BattleActions>();
-        selectedAbility.battleUnit = gameObject.GetComponent<BattleUnit>();
+        if (selectedAbility != null)
+        {
+            selectedAbility.battleUnit = gameObject.GetComponent<BattleUnit>();
+        }        
     }
 
     public void OnSelect()

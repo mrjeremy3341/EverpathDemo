@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51590a70064f3be4f828862623ad4897, type: 3}
+  m_Name: Shop Inventory
+  m_EditorClassIdentifier: 
+  completeInventoryList: {fileID: 0}
+  heldInventory:
+  - {fileID: 11400000, guid: dce7bffd6d49801409b92687724d36a3, type: 2}
+  - {fileID: 11400000, guid: d0e3b3f60ad8b194e8be2eeee0ff2588, type: 2}
+  - {fileID: 11400000, guid: f621526c8bd2b974aa10a4c51d3921a4, type: 2}
+  - {fileID: 11400000, guid: d0e3b3f60ad8b194e8be2eeee0ff2588, type: 2}
+  - {fileID: 11400000, guid: f621526c8bd2b974aa10a4c51d3921a4, type: 2}
+  - {fileID: 11400000, guid: dce7bffd6d49801409b92687724d36a3, type: 2}
+  - {fileID: 11400000, guid: f621526c8bd2b974aa10a4c51d3921a4, type: 2}
+  inventoryOwner: Secret Shop
+  isPartyMember: 0

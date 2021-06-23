@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   battleUnit: {fileID: 3783470650741117017}
-  conditions: []
+  unitConditions: {fileID: 0}
 --- !u!1 &3101491374907104460
 GameObject:
   m_ObjectHideFlags: 0
@@ -262,7 +262,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3739053178936934177}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.9, y: 0.7, z: 0}
+  m_LocalPosition: {x: 1, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3015207391506035305}
@@ -690,9 +690,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02d8e232404290343b6de659048e6247, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  battleActions: {fileID: 6501076724861775545}
-  attackRange: 1
-  isMagic: 0
 --- !u!1 &6168497832988204143
 GameObject:
   m_ObjectHideFlags: 0
@@ -744,6 +741,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentCell: {fileID: 0}
+  moveNextCell: {fileID: 0}
   isAlly: 0
   isTargetable: 1
   battleManager: {fileID: 0}
@@ -752,8 +750,9 @@ MonoBehaviour:
   battleConditions: {fileID: 3397464474282985634}
   waitingForInput: 0
   actionMode: 0
-  unitInfo: {fileID: 0}
   unitConditions: {fileID: 0}
+  unitInventory: {fileID: 0}
+  unitAnimation: {fileID: 0}
   actionUsed: 0
   moveUsed: 0
   isDead: 0
@@ -770,6 +769,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitName: Acolyte
+  basicAttackRange: 0
+  isMagic: 0
   maxHP: 30
   currentHP: 30
   maxAP: 3
@@ -808,13 +809,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdeddfaea406ceb4794000beab7294aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedAbility: {fileID: 11400000, guid: 9b1061f47348283478a361038edf4169, type: 2}
+  selectedAbility: {fileID: 0}
   battleActions: {fileID: 0}
   unitAbilities: []
   actionsHolder: {fileID: 6705125535609280292}
-  level: 1
+  abilityManager: {fileID: 0}
   targettingController: {fileID: 0}
-  targetCell: {fileID: 0}
+  level: 1
+  range: 0
 --- !u!1 &6705125535609280292
 GameObject:
   m_ObjectHideFlags: 0
@@ -844,7 +846,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 482125873091951627}
-  - {fileID: 9154939094934417562}
   m_Father: {fileID: 3015207391506035305}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -863,8 +864,6 @@ MonoBehaviour:
   battleUnit: {fileID: 3783470650741117017}
   basicAttack: {fileID: 6419193828591769752}
   unitAbilities: {fileID: -7795085461244582793}
-  currentAbilites:
-  - {fileID: 9154939094934417563}
 --- !u!1 &8363132320359427759
 GameObject:
   m_ObjectHideFlags: 0
@@ -940,80 +939,3 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!1001 &9198006030468584367
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 4757061439903544915}
-    m_Modifications:
-    - target: {fileID: 47570759037346612, guid: 8a155a85d90ba3d48be3b93d3ef5423c, type: 3}
-      propertyPath: battleActions
-      value: 
-      objectReference: {fileID: 6501076724861775545}
-    - target: {fileID: 47570759037346613, guid: 8a155a85d90ba3d48be3b93d3ef5423c, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 47570759037346613, guid: 8a155a85d90ba3d48be3b93d3ef5423c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 47570759037346613, guid: 8a155a85d90ba3d48be3b93d3ef5423c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 47570759037346613, guid: 8a155a85d90ba3d48be3b93d3ef5423c, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 47570759037346613, guid: 8a155a85d90ba3d48be3b93d3ef5423c, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 47570759037346613, guid: 8a155a85d90ba3d48be3b93d3ef5423c, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 47570759037346613, guid: 8a155a85d90ba3d48be3b93d3ef5423c, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 47570759037346613, guid: 8a155a85d90ba3d48be3b93d3ef5423c, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 47570759037346613, guid: 8a155a85d90ba3d48be3b93d3ef5423c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 47570759037346613, guid: 8a155a85d90ba3d48be3b93d3ef5423c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 47570759037346613, guid: 8a155a85d90ba3d48be3b93d3ef5423c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 47570759037346615, guid: 8a155a85d90ba3d48be3b93d3ef5423c, type: 3}
-      propertyPath: m_Name
-      value: Word of Healing
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 8a155a85d90ba3d48be3b93d3ef5423c, type: 3}
---- !u!114 &9154939094934417563 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 47570759037346612, guid: 8a155a85d90ba3d48be3b93d3ef5423c, type: 3}
-  m_PrefabInstance: {fileID: 9198006030468584367}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e2b57865669a7e408c01eb91d109154, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &9154939094934417562 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 47570759037346613, guid: 8a155a85d90ba3d48be3b93d3ef5423c, type: 3}
-  m_PrefabInstance: {fileID: 9198006030468584367}
-  m_PrefabAsset: {fileID: 0}

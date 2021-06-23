@@ -118,7 +118,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1069687523838327121}
-  - {fileID: 2220998148438106809}
   m_Father: {fileID: 3015207391506035305}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -137,8 +136,6 @@ MonoBehaviour:
   battleUnit: {fileID: 3783470650741117017}
   basicAttack: {fileID: 4105738691927729548}
   unitAbilities: {fileID: -4429170036907559258}
-  currentAbilites:
-  - {fileID: 1596061885034832446}
 --- !u!1 &648864366158596434
 GameObject:
   m_ObjectHideFlags: 0
@@ -431,7 +428,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3739053178936934177}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.9, y: 0.7, z: 0}
+  m_LocalPosition: {x: 1, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3015207391506035305}
@@ -539,6 +536,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentCell: {fileID: 0}
+  moveNextCell: {fileID: 0}
   isAlly: 0
   isTargetable: 1
   battleManager: {fileID: 0}
@@ -547,8 +545,9 @@ MonoBehaviour:
   battleConditions: {fileID: 2143978432039776255}
   waitingForInput: 0
   actionMode: 0
-  unitInfo: {fileID: 0}
   unitConditions: {fileID: 0}
+  unitInventory: {fileID: 0}
+  unitAnimation: {fileID: 0}
   actionUsed: 0
   moveUsed: 0
   isDead: 0
@@ -565,6 +564,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitName: Apprentice
+  basicAttackRange: 0
+  isMagic: 0
   maxHP: 25
   currentHP: 25
   maxAP: 2
@@ -603,13 +604,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdeddfaea406ceb4794000beab7294aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedAbility: {fileID: 11400000, guid: 9b1061f47348283478a361038edf4169, type: 2}
+  selectedAbility: {fileID: 0}
   battleActions: {fileID: 0}
   unitAbilities: []
   actionsHolder: {fileID: 573383065575316450}
-  level: 1
+  abilityManager: {fileID: 0}
   targettingController: {fileID: 0}
-  targetCell: {fileID: 0}
+  level: 1
+  range: 0
 --- !u!1 &6753660382389130208
 GameObject:
   m_ObjectHideFlags: 0
@@ -893,7 +895,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   battleUnit: {fileID: 3783470650741117017}
-  conditions: []
+  unitConditions: {fileID: 0}
 --- !u!1 &7772787940404093672
 GameObject:
   m_ObjectHideFlags: 0
@@ -937,83 +939,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02d8e232404290343b6de659048e6247, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  battleActions: {fileID: 7550671234755609389}
-  attackRange: 4
-  isMagic: 1
---- !u!1001 &8854638401548538740
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 712722538998302319}
-    m_Modifications:
-    - target: {fileID: 2457864840661517396, guid: abed8c0f39d2c7c4e9234bf752b0eb4d, type: 3}
-      propertyPath: m_Name
-      value: Primordial Shot
-      objectReference: {fileID: 0}
-    - target: {fileID: 7220234174507086285, guid: abed8c0f39d2c7c4e9234bf752b0eb4d, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7220234174507086285, guid: abed8c0f39d2c7c4e9234bf752b0eb4d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7220234174507086285, guid: abed8c0f39d2c7c4e9234bf752b0eb4d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7220234174507086285, guid: abed8c0f39d2c7c4e9234bf752b0eb4d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7220234174507086285, guid: abed8c0f39d2c7c4e9234bf752b0eb4d, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7220234174507086285, guid: abed8c0f39d2c7c4e9234bf752b0eb4d, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7220234174507086285, guid: abed8c0f39d2c7c4e9234bf752b0eb4d, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7220234174507086285, guid: abed8c0f39d2c7c4e9234bf752b0eb4d, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7220234174507086285, guid: abed8c0f39d2c7c4e9234bf752b0eb4d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7220234174507086285, guid: abed8c0f39d2c7c4e9234bf752b0eb4d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7220234174507086285, guid: abed8c0f39d2c7c4e9234bf752b0eb4d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7838417717351674186, guid: abed8c0f39d2c7c4e9234bf752b0eb4d, type: 3}
-      propertyPath: battleActions
-      value: 
-      objectReference: {fileID: 7550671234755609389}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: abed8c0f39d2c7c4e9234bf752b0eb4d, type: 3}
---- !u!114 &1596061885034832446 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7838417717351674186, guid: abed8c0f39d2c7c4e9234bf752b0eb4d, type: 3}
-  m_PrefabInstance: {fileID: 8854638401548538740}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e2b57865669a7e408c01eb91d109154, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &2220998148438106809 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7220234174507086285, guid: abed8c0f39d2c7c4e9234bf752b0eb4d, type: 3}
-  m_PrefabInstance: {fileID: 8854638401548538740}
-  m_PrefabAsset: {fileID: 0}

@@ -56,15 +56,6 @@ TextureImporter:
   - first:
       213: -7465984737805378413
     second: Soldier_Walk_SW_17
-  - first:
-      213: 5934254440292467907
-    second: Soldier_Walk_SW_18
-  - first:
-      213: -3887000489804863686
-    second: Soldier_Walk_SW_19
-  - first:
-      213: -8204399682429904403
-    second: Soldier_Walk_SW_20
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -95,9 +86,9 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
-    aniso: -1
-    mipBias: -100
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -131,7 +122,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -143,7 +134,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -527,69 +518,6 @@ TextureImporter:
       bones: []
       spriteID: 39c5f9cff6e736890800000000000000
       internalID: -7465984737805378413
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Soldier_Walk_SW_18
-      rect:
-        serializedVersion: 2
-        x: 216
-        y: 72
-        width: 72
-        height: 72
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3c4ca60f8f4ba5250800000000000000
-      internalID: 5934254440292467907
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Soldier_Walk_SW_19
-      rect:
-        serializedVersion: 2
-        x: 288
-        y: 72
-        width: 72
-        height: 72
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a37696316a99e0ac0800000000000000
-      internalID: -3887000489804863686
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Soldier_Walk_SW_20
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 72
-        height: 72
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: de9107525fd142e80800000000000000
-      internalID: -8204399682429904403
       vertices: []
       indices: 
       edges: []

@@ -56,15 +56,6 @@ TextureImporter:
   - first:
       213: -214579234286757750
     second: Solider_Walk_NW_17
-  - first:
-      213: 9113584947692507156
-    second: Solider_Walk_NW_18
-  - first:
-      213: 2998678616631876998
-    second: Solider_Walk_NW_19
-  - first:
-      213: -2021587782196801218
-    second: Solider_Walk_NW_20
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -95,9 +86,9 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
-    aniso: -1
-    mipBias: -100
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -131,7 +122,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -143,7 +134,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -527,69 +518,6 @@ TextureImporter:
       bones: []
       spriteID: a889924c259a50df0800000000000000
       internalID: -214579234286757750
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Solider_Walk_NW_18
-      rect:
-        serializedVersion: 2
-        x: 216
-        y: 72
-        width: 72
-        height: 72
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4101f8d5935f97e70800000000000000
-      internalID: 9113584947692507156
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Solider_Walk_NW_19
-      rect:
-        serializedVersion: 2
-        x: 288
-        y: 72
-        width: 72
-        height: 72
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 68d17eb60527d9920800000000000000
-      internalID: 2998678616631876998
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Solider_Walk_NW_20
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 72
-        height: 72
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e31d3e77f90e1f3e0800000000000000
-      internalID: -2021587782196801218
       vertices: []
       indices: 
       edges: []

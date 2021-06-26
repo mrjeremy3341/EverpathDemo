@@ -27,16 +27,18 @@ MonoBehaviour:
   scalingParameters: {fileID: 11400000, guid: 5f0995f06316e1e4aa3e3f3bad24a246, type: 2}
   usesCustomScaling: 0
   customScalingParameters: {fileID: 0}
-  classAbilities: {fileID: 0}
+  classAbilities: {fileID: 11400000, guid: 382325e88eacbe54ab7503832e02ff35, type: 2}
   usesCustomAbilities: 0
   customClassAbilities: {fileID: 0}
-  basicAttackRange: 0
+  inventory: {fileID: 11400000, guid: 79c00fb394ea29f449e0dc80287dfb60, type: 2}
+  animatorController: {fileID: 9100000, guid: 0fb9f84fcc936bc498b80267677668bc, type: 2}
+  basicAttackRange: 1
   basicAttackIsMagic: 0
-  baseHP: 0
-  baseAP: 0
-  baseMP: 0
-  baseAttack: 0
-  baseArmor: 0
-  baseProtection: 0
-  baseAgility: 0
+  baseHP: 200
+  baseAP: 3
+  baseMP: 3
+  baseAttack: 5
+  baseArmor: 2
+  baseProtection: 2
+  baseAgility: 2
   baseImmunities: 

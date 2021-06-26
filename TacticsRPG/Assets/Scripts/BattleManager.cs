@@ -8,19 +8,23 @@ public class BattleManager : MonoBehaviour
     public TurnManager turnManager;
     public UIManager uiManager;
 
+    public List<UnitTemplate> playerUnits2;
+
     public List<BattleUnit> playerUnits;
     public List<BattleUnit> enemyUnits;
     public List<BattleUnit> spawnedUnits = new List<BattleUnit>();
 
-    public GameObject baseEnemyPrefab;
+    public GameObject basePartyUnitPrefab;
     public RuntimeAnimatorController animatorController;
     public GameObject targettingController;
     public GameObject abilityManager;
 
     public void SpawnPlayers(List<GridCell> spawnCells)
     {
+        /*
         foreach (BattleUnit player in playerUnits)
         {
+            
             BattleUnit unit = Instantiate<BattleUnit>(player);
             GridCell cell = spawnCells[Random.Range(0, spawnCells.Count)];
             //////////
@@ -38,6 +42,34 @@ public class BattleManager : MonoBehaviour
             unitInventory.inventoryUI = uiManager.GetComponent<InventoryUI>();
             unit.unitInventory = unitInventory;
             //////////
+            spawnCells.Remove(cell);
+            unit.SetUnitStart(cell);
+            unit.battleManager = this;
+            unit.isAlly = true;
+            BattleCalculations.SetInitiative(unit);
+            spawnedUnits.Add(unit);
+            
+        }
+        */
+
+        foreach (var playerUnit in playerUnits2)
+        {
+            // Spawn
+            GameObject unitObj = Instantiate(basePartyUnitPrefab);
+            BattleUnit unit = unitObj.GetComponent<BattleUnit>();
+            GridCell cell = spawnCells[Random.Range(0, spawnCells.Count)];
+
+            // Build
+            UnitCreator.BuildUnit(unit, playerUnit);
+
+            // Set References
+            UnitAbilities unitAbilities = unit.gameObject.GetComponent<UnitAbilities>();
+            unitAbilities.abilityManager = abilityManager;
+            unitAbilities.targettingController = targettingController;
+            UnitInventory unitInventory = unit.gameObject.GetComponent<UnitInventory>();
+            unitInventory.inventoryUI = uiManager.GetComponent<InventoryUI>();
+
+            // Post Spawn
             spawnCells.Remove(cell);
             unit.SetUnitStart(cell);
             unit.battleManager = this;

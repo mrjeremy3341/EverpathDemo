@@ -10,8 +10,7 @@ public class UnitAnimations : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        animator = GetComponent<Animator>();
-        unit.unitAnimation = this;
+        animator = GetComponent<Animator>();        
         SetIdle(CellDirection.NE);
     }
 

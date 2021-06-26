@@ -4291,6 +4291,11 @@ MonoBehaviour:
   gridManager: {fileID: 1517362029}
   turnManager: {fileID: 2041722088}
   uiManager: {fileID: 1266798847}
+  playerUnits2:
+  - {fileID: 11400000, guid: 126977acf57cb4b429054c32831333cd, type: 2}
+  - {fileID: 11400000, guid: 647aa5989ce885a4f923e1f9d5c2d48f, type: 2}
+  - {fileID: 11400000, guid: 126977acf57cb4b429054c32831333cd, type: 2}
+  - {fileID: 11400000, guid: 647aa5989ce885a4f923e1f9d5c2d48f, type: 2}
   playerUnits:
   - {fileID: 3783470650741117017, guid: 9b1186b4baff3e74b9d2ef6fd31f74c6, type: 3}
   - {fileID: 3783470650741117017, guid: 13b119282cfd72148be96ce96f12d871, type: 3}
@@ -4304,7 +4309,7 @@ MonoBehaviour:
   - {fileID: 3783470650741117017, guid: ce5b533460b5dc547b0771111772ae60, type: 3}
   - {fileID: 3783470650741117017, guid: a144747321c2b044fad47c8a936f9e95, type: 3}
   spawnedUnits: []
-  baseEnemyPrefab: {fileID: 0}
+  basePartyUnitPrefab: {fileID: 6168497832988204143, guid: 9b1186b4baff3e74b9d2ef6fd31f74c6, type: 3}
   animatorController: {fileID: 9100000, guid: 0fb9f84fcc936bc498b80267677668bc, type: 2}
   targettingController: {fileID: 1714291926}
   abilityManager: {fileID: 510639836}

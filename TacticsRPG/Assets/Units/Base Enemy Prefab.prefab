@@ -213,6 +213,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentCell: {fileID: 0}
+  moveNextCell: {fileID: 0}
   isAlly: 0
   isTargetable: 1
   battleManager: {fileID: 0}
@@ -221,10 +222,9 @@ MonoBehaviour:
   battleConditions: {fileID: 3066138752770776708}
   waitingForInput: 0
   actionMode: 0
-  animator: {fileID: 0}
-  unitInfo: {fileID: 0}
   unitConditions: {fileID: 0}
   unitInventory: {fileID: 0}
+  unitAnimation: {fileID: 0}
   actionUsed: 0
   moveUsed: 0
   isDead: 0
@@ -513,6 +513,7 @@ GameObject:
   - component: {fileID: 620481187849163622}
   - component: {fileID: 3214434461136412407}
   - component: {fileID: 7374924097793559190}
+  - component: {fileID: 3618933812011808123}
   m_Layer: 0
   m_Name: GFX
   m_TagString: Untagged
@@ -545,7 +546,6 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -605,6 +605,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3618933812011808123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5595345043306313634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5195e71f041091f4c8f6690028c08eda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unit: {fileID: 0}
 --- !u!1 &5915465282654092702
 GameObject:
   m_ObjectHideFlags: 0

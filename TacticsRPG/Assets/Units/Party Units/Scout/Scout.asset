@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c663d798a3c8194db2f10e7d4908dd2, type: 3}
+  m_Name: Scout
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  unitName: Scout
+  unitSprite: {fileID: -3083088912140772451, guid: be06b298e7e78da49acfc15721edb2dd, type: 3}
+  unitClass: 0
+  scalingParameters: {fileID: 11400000, guid: 5f0995f06316e1e4aa3e3f3bad24a246, type: 2}
+  usesCustomScaling: 0
+  customScalingParameters: {fileID: 0}
+  classAbilities: {fileID: 11400000, guid: 48afec526508c5a489604fe411b19a1c, type: 2}
+  usesCustomAbilities: 0
+  customClassAbilities: {fileID: 0}
+  inventory: {fileID: 11400000, guid: 26ee9bee9ea0c904f97d542abfc5f1d7, type: 2}
+  animatorController: {fileID: 9100000, guid: 6ee715334243f88429b40197bb770f07, type: 2}
+  basicAttackRange: 5
+  basicAttackIsMagic: 0
+  baseHP: 10
+  baseAP: 4
+  baseMP: 4
+  baseAttack: 7
+  baseArmor: 2
+  baseProtection: 4
+  baseAgility: 2
+  baseImmunities: 

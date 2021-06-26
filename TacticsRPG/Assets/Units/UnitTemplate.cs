@@ -32,13 +32,17 @@ public class UnitTemplate : SerializedScriptableObject
     public ScalingStatsSO customScalingParameters;
     [BoxGroup("Abilities")]
     [AssetList(Path = "Units/Default Dictionaries/")]
-    public DefaultEnemyClassAbilities classAbilities;
+    public ClassAbilitiesSO classAbilities;
     [InfoBox("If unit has custom abilities")]
     [BoxGroup("Abilities")]
     public bool usesCustomAbilities;
     [ShowIf("usesCustomAbilities")]
     [BoxGroup("Abilities")]
     public ClassAbilitiesSO customClassAbilities;
+    [BoxGroup("Inventory")]
+    public Inventory inventory;
+    [BoxGroup("Animations")]
+    public RuntimeAnimatorController animatorController;
 
     [BoxGroup("Base Stats")]
     public int basicAttackRange;

@@ -18,3 +18,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: dce7bffd6d49801409b92687724d36a3, type: 2}
   inventoryOwner: 
   isPartyMember: 1
+  isShop: 0

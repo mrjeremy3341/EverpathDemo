@@ -40,10 +40,6 @@ public class BattleUnit : MonoBehaviour
         battleConditions.battleUnit = this;     
     }
 
-    private void Start()
-    {
-        
-    }
 
     private void Update()
     {
@@ -57,7 +53,7 @@ public class BattleUnit : MonoBehaviour
     {
         this.currentCell = startCell;
         this.currentCell.currentUnit = this;
-        this.transform.position = new Vector2(startCell.transform.position.x, startCell.transform.position.y + ((startCell.elevation -1) * .12f));
+        this.transform.position = startCell.GetTargetPosition();
     }
 
     public IEnumerator MoveUnit(GridCell newCell)
@@ -79,7 +75,7 @@ public class BattleUnit : MonoBehaviour
             cellDir = (CellDirection)directionNo;
             unitAnimation.WalkSwitch(cellDir);
 
-            StartCoroutine(LerpPosition(new Vector2(c.transform.position.x, c.transform.position.y + ((c.elevation - 1) * .12f)), .5f));
+            StartCoroutine(LerpPosition(c.GetTargetPosition(), .5f));
             yield return new WaitForSeconds(.5f);
 
             currentCell = c;
@@ -142,15 +138,5 @@ public class BattleUnit : MonoBehaviour
         int damage = BattleCalculations.BasicAttackDamage(battleActions.battleUnit, target, unitStats.isMagic);
         target.TakeDamage(damage);
         battleActions.battleUnit.battleManager.gridManager.ClearCells();
-    }
-
-    void HealUnit()
-    {
-
-    }
-
-    void GetInititive()
-    {
-
     }
 }

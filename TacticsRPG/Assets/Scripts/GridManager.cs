@@ -43,6 +43,12 @@ public class GridManager : MonoBehaviour
             }
         }
 
+        foreach(GridCell c in gridCells)
+        {
+            c.cellBorder.SetSprites();
+            c.cellBorder.SetVisible();
+        }
+
         // Set ally spawns
         int i1 = (int)(gridSize.x * 1.5f);
         GridCell start1 = gridCells[i1];
@@ -73,19 +79,14 @@ public class GridManager : MonoBehaviour
         cell.transform.localPosition = pos;
 
         // Get elevation from height map
-        cell.grassLevel = Random.Range(0, 4);
+        float grass = NoiseMap.fBM(x, y, mapSeed, 0.75f, 1, 0.75f);
+        cell.grassLevel = Mathf.RoundToInt(3 * grass);
 
         float height = NoiseMap.fBM(x, y, mapSeed, 0.35f, 1, 0.5f); //TODO: Change this function to be my own custom noise/Perloin map eventually
-        cell.elevation = Mathf.RoundToInt(10 * height);
-        if(cell.elevation > 8)
-        {
-            cell.elevation = 8;
-        }
-        if(cell.elevation < 1)
-        {
-            cell.elevation = 1;
-        }
-
+        cell.elevation = Mathf.RoundToInt(3 * height);
+        cell.SetSprite();
+        cell.SetCollider();
+        
         // Set Neighbors
         if (x > 0)
         {

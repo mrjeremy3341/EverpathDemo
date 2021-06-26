@@ -425,7 +425,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2418865212739077321}
-  - {fileID: 1791546350790544058}
   m_Father: {fileID: 3015207391506035305}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -444,8 +443,6 @@ MonoBehaviour:
   battleUnit: {fileID: 3783470650741117017}
   basicAttack: {fileID: 3361593210607565621}
   unitAbilities: {fileID: 0}
-  currentAbilites:
-  - {fileID: 1916487838527428324}
 --- !u!1 &4458541676362131565
 GameObject:
   m_ObjectHideFlags: 0
@@ -607,7 +604,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   battleUnit: {fileID: 3783470650741117017}
-  conditions: []
+  unitConditions: {fileID: 0}
 --- !u!1 &6168497832988204143
 GameObject:
   m_ObjectHideFlags: 0
@@ -659,6 +656,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentCell: {fileID: 0}
+  moveNextCell: {fileID: 0}
   isAlly: 0
   isTargetable: 1
   battleManager: {fileID: 0}
@@ -667,8 +665,9 @@ MonoBehaviour:
   battleConditions: {fileID: 6109270707112334855}
   waitingForInput: 0
   actionMode: 0
-  unitInfo: {fileID: 0}
   unitConditions: {fileID: 0}
+  unitInventory: {fileID: 0}
+  unitAnimation: {fileID: 0}
   actionUsed: 0
   moveUsed: 0
   isDead: 0
@@ -685,6 +684,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitName: Tank
+  basicAttackRange: 0
+  isMagic: 0
   maxHP: 30
   currentHP: 30
   maxAP: 4
@@ -726,13 +727,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdeddfaea406ceb4794000beab7294aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedAbility: {fileID: 11400000, guid: 9b1061f47348283478a361038edf4169, type: 2}
+  selectedAbility: {fileID: 0}
   battleActions: {fileID: 0}
   unitAbilities: []
   actionsHolder: {fileID: 4350396924439751938}
-  level: 1
+  abilityManager: {fileID: 0}
   targettingController: {fileID: 0}
-  targetCell: {fileID: 0}
+  level: 1
+  range: 0
 --- !u!1 &6523539808360622410
 GameObject:
   m_ObjectHideFlags: 0
@@ -940,87 +942,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02d8e232404290343b6de659048e6247, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  battleActions: {fileID: 8237500728349126888}
-  attackRange: 1
-  isMagic: 0
---- !u!1001 &3763795737135717377
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1071323172447434432}
-    m_Modifications:
-    - target: {fileID: 3091534259404451426, guid: 757d42a88d9f29245b60eb22005f82ce, type: 3}
-      propertyPath: condition
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3235671001570088635, guid: 757d42a88d9f29245b60eb22005f82ce, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3235671001570088635, guid: 757d42a88d9f29245b60eb22005f82ce, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3235671001570088635, guid: 757d42a88d9f29245b60eb22005f82ce, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3235671001570088635, guid: 757d42a88d9f29245b60eb22005f82ce, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3235671001570088635, guid: 757d42a88d9f29245b60eb22005f82ce, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3235671001570088635, guid: 757d42a88d9f29245b60eb22005f82ce, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3235671001570088635, guid: 757d42a88d9f29245b60eb22005f82ce, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3235671001570088635, guid: 757d42a88d9f29245b60eb22005f82ce, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3235671001570088635, guid: 757d42a88d9f29245b60eb22005f82ce, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3235671001570088635, guid: 757d42a88d9f29245b60eb22005f82ce, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3235671001570088635, guid: 757d42a88d9f29245b60eb22005f82ce, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3360542670250445541, guid: 757d42a88d9f29245b60eb22005f82ce, type: 3}
-      propertyPath: battleActions
-      value: 
-      objectReference: {fileID: 8237500728349126888}
-    - target: {fileID: 7023278726531349338, guid: 757d42a88d9f29245b60eb22005f82ce, type: 3}
-      propertyPath: m_Name
-      value: Battle Cry
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 757d42a88d9f29245b60eb22005f82ce, type: 3}
---- !u!114 &1916487838527428324 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3360542670250445541, guid: 757d42a88d9f29245b60eb22005f82ce, type: 3}
-  m_PrefabInstance: {fileID: 3763795737135717377}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e2b57865669a7e408c01eb91d109154, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1791546350790544058 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3235671001570088635, guid: 757d42a88d9f29245b60eb22005f82ce, type: 3}
-  m_PrefabInstance: {fileID: 3763795737135717377}
-  m_PrefabAsset: {fileID: 0}

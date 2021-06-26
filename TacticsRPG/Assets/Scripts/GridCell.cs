@@ -22,6 +22,7 @@ public class GridCell : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     public PolygonCollider2D cellCollider;
     public PathNode pathNode;
+    public CellBorder cellBorder;
 
     public void SetNeighbor(CellDirection direction, GridCell cell)
     {
@@ -29,20 +30,22 @@ public class GridCell : MonoBehaviour
         cell.neighbors[(int)direction.Opposite()] = this;
     }
 
-    private void Update()
+    public Vector2 GetTargetPosition()
     {
-        //TODO: Add dedicated tile visuals script to each cell, get the tile assignment out fo update to increase performance
+        float x = this.transform.position.x;
+        float y = this.transform.position.y + elevation * 0.25f;
 
+        return new Vector2(x, y);
+    }
+
+    public void SetSprite()
+    {
         Sprite[] sprites = spriteLists[grassLevel].sprites;
-        if(elevation == 0)
-        {
-            spriteRenderer.sprite = null;
-            cellCollider.enabled = false;
-        }
-        else
-        {
-            spriteRenderer.sprite = sprites[elevation - 1];
-            cellCollider.offset = new Vector2(1, elevation * .12f); 
-        }
+        spriteRenderer.sprite = sprites[elevation];
+    }
+
+    public void SetCollider()
+    {
+        cellCollider.offset = new Vector2(0, elevation * .25f + .03f);
     }
 }

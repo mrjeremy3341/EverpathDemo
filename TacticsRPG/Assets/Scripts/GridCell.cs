@@ -30,12 +30,13 @@ public class GridCell : MonoBehaviour
         cell.neighbors[(int)direction.Opposite()] = this;
     }
 
-    public Vector2 GetTargetPosition()
+    public Vector3 GetTargetPosition()
     {
         float x = this.transform.position.x;
         float y = this.transform.position.y + elevation * 0.25f;
+        float z = this.transform.position.y - 1f;
 
-        return new Vector2(x, y);
+        return new Vector3(x, y, z);
     }
 
     public void SetSprite()

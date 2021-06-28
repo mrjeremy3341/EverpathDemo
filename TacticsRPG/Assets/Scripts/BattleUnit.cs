@@ -89,14 +89,14 @@ public class BattleUnit : MonoBehaviour
         battleManager.gridManager.ClearCells();
     }
 
-    IEnumerator LerpPosition(Vector2 targetPosition, float duration)
+    IEnumerator LerpPosition(Vector3 targetPosition, float duration)
     {
         float time = 0;
-        Vector2 startPosition = transform.position;
+        Vector3 startPosition = transform.position;
 
         while (time < duration)
         {
-            transform.position = Vector2.Lerp(startPosition, targetPosition, time / duration);
+            transform.position = Vector3.Lerp(startPosition, targetPosition, time / duration);
             time += Time.deltaTime;
             yield return null;
         }

@@ -27,9 +27,11 @@ MonoBehaviour:
   scalingParameters: {fileID: 11400000, guid: 5f0995f06316e1e4aa3e3f3bad24a246, type: 2}
   usesCustomScaling: 0
   customScalingParameters: {fileID: 0}
-  classAbilities: {fileID: 0}
+  classAbilities: {fileID: 11400000, guid: 382325e88eacbe54ab7503832e02ff35, type: 2}
   usesCustomAbilities: 0
   customClassAbilities: {fileID: 0}
+  inventory: {fileID: 11400000, guid: 26ee9bee9ea0c904f97d542abfc5f1d7, type: 2}
+  animatorController: {fileID: 9100000, guid: 2142cf1839a56714281e29ae4bf111ec, type: 2}
   basicAttackRange: 0
   basicAttackIsMagic: 0
   baseHP: 250

@@ -80,50 +80,51 @@ public class BattleManager : MonoBehaviour
     }
 
     public void SpawnEnemies(List<GridCell> spawnCells)
-    {        
-        foreach(BattleUnit enemy in enemyUnits)
-        {
-            BattleUnit unit = Instantiate<BattleUnit>(enemy);
-            GridCell cell = spawnCells[Random.Range(0, spawnCells.Count)];
-            UnitConditionsSO _unitConditions = ScriptableObject.CreateInstance<UnitConditionsSO>();
-            unit.unitConditions = _unitConditions;
-            UnitInventory unitInventory = unit.gameObject.AddComponent<UnitInventory>();
-            unitInventory.inventoryUI = uiManager.GetComponent<InventoryUI>();
-            spawnCells.Remove(cell);
-            unit.SetUnitStart(cell);
-            unit.battleManager = this;
-            unit.isAlly = false;
-            BattleCalculations.SetInitiative(unit);
-            spawnedUnits.Add(unit);
-        }
-        
-        /*
-        foreach (EnemyTemplate enemyTemplate in enemyUnits)
-        {
-            BattleUnit unit;
-
-            if (enemyTemplate.isCompletePrefab)
+    {
+            foreach(BattleUnit enemy in enemyUnits)
             {
-                unit = Instantiate(enemyTemplate.enemyPrefab).GetComponent<BattleUnit>();
+                BattleUnit unit = Instantiate<BattleUnit>(enemy);
+                GridCell cell = spawnCells[Random.Range(0, spawnCells.Count)];
+                UnitConditionsSO _unitConditions = ScriptableObject.CreateInstance<UnitConditionsSO>();
+                unit.unitConditions = _unitConditions;
+                unit.GetComponentInChildren<Animator>().runtimeAnimatorController = animatorController;
+                UnitInventory unitInventory = unit.gameObject.AddComponent<UnitInventory>();
+                unitInventory.inventoryUI = uiManager.GetComponent<InventoryUI>();
+                spawnCells.Remove(cell);
+                unit.SetUnitStart(cell);
+                unit.battleManager = this;
+                unit.isAlly = false;
+                BattleCalculations.SetInitiative(unit);
+                spawnedUnits.Add(unit);
             }
-            else
+
+            /*
+            foreach (EnemyTemplate enemyTemplate in enemyUnits)
             {
-                unit = Instantiate(baseEnemyPrefab).GetComponent<BattleUnit>();
-                UnitCreator.BuildUnit(unit, enemyTemplate);
-            }      
-            
-            UnitConditionsSO _unitConditions = ScriptableObject.CreateInstance<UnitConditionsSO>();
-            unit.unitConditions = _unitConditions;            
-            GridCell cell = spawnCells[Random.Range(0, spawnCells.Count)];
-            spawnCells.Remove(cell);
-            unit.SetUnitStart(cell);
-            unit.battleManager = this;
-            unit.isAlly = false;
-            BattleCalculations.SetInitiative(unit);
-            spawnedUnits.Add(unit);
+                BattleUnit unit;
+
+                if (enemyTemplate.isCompletePrefab)
+                {
+                    unit = Instantiate(enemyTemplate.enemyPrefab).GetComponent<BattleUnit>();
+                }
+                else
+                {
+                    unit = Instantiate(baseEnemyPrefab).GetComponent<BattleUnit>();
+                    UnitCreator.BuildUnit(unit, enemyTemplate);
+                }      
+
+                UnitConditionsSO _unitConditions = ScriptableObject.CreateInstance<UnitConditionsSO>();
+                unit.unitConditions = _unitConditions;            
+                GridCell cell = spawnCells[Random.Range(0, spawnCells.Count)];
+                spawnCells.Remove(cell);
+                unit.SetUnitStart(cell);
+                unit.battleManager = this;
+                unit.isAlly = false;
+                BattleCalculations.SetInitiative(unit);
+                spawnedUnits.Add(unit);
+            }
+            */
         }
-        */
-    }
 
     private void AssignStats(BattleUnit enemy, EnemyTemplate template)
     {
